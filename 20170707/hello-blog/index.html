@@ -520,11 +520,11 @@
 <li><a href="wanwang.aliyun.com">万网</a>上注册域名，目前已被阿里云收购</li>
 <li>添加域名解析(我直接使用了万网提供的域名解析，也可以使用Dnspod等)<br><img src="/image/other/DNS.png" alt="域名解析"></li>
 <li>Coding Pages配置，直接添加自定义域名<code>www.zydarChen.top</code></li>
-<li>GitHub Pages配置，Hexo目录下建立<code>CNAME</code>文件，并将<code>www.zydarChen.top</code>写入，部署到服务器即可。在 <code>Settings-GitHub Pages</code>页面可看到部署成功。<br><img src="/image/other/github_DNS.png" alt="github_DNS"><blockquote>
+<li>GitHub Pages配置，Hexo目录下建立<code>CNAME</code>文件，并将<code>www.zydarChen.top</code>写入，部署到服务器即可。在 <code>Settings-GitHub Pages</code>页面可看到部署成功。<br><img src="/image/other/github_DNS.png" alt="github_DNS"></li>
+</ul>
+<blockquote>
 <p>按上述做法，当海外地址访问<code>www.zydarChen.top</code>时会解析到<code>zydarchen.github.io</code>，此时可能出现链接不安全/证书风险问题。这是GitHub Pages本身的问题，<a href="https://help.github.com/articles/securing-your-github-pages-site-with-https/" target="_blank" rel="noopener">官方文档</a>上写着“HTTPS is not supported for GitHub Pages using custom domains”<br>解决方案：<a href="http://blog.csdn.net/u011244202/article/details/57106544" target="_blank" rel="noopener">让个人域名下GithubPage完美支持https</a></p>
 </blockquote>
-</li>
-</ul>
 <h2 id="Q15：为页面添加阅读人数统计"><a href="#Q15：为页面添加阅读人数统计" class="headerlink" title="Q15：为页面添加阅读人数统计"></a>Q15：为页面添加阅读人数统计</h2><p>解决方案：<br><a href="http://www.icafebolger.com/hexo/hexopostcount.html" target="_blank" rel="noopener">Hexo统计post阅读次数</a><br>我的实现：</p>
 <ul>
 <li>注册<a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanClound</a>，创建Counter并记录APP ID跟APP Key</li>
