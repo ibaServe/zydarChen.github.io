@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20171008/django-demo/</loc>
+    <lastmod>2018-02-26T15:16:12.792Z</lastmod>
+    <data>
+        <display>
+        <title>简单的信息统计页面Demo</title>
+        <pubTime>2017-10-08T07:06:03.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>django</tag>
+         
+         
+           
+             
+              <breadCrumb title="不务正业" url="http://zydarchen.coding.me/categories/%E4%B8%8D%E5%8A%A1%E6%AD%A3%E4%B8%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20180116/understanding-Stateful-LSTM/</loc>
+    <lastmod>2018-01-16T13:09:57.054Z</lastmod>
+    <data>
+        <display>
+        <title>理解stateful LSTM</title>
+        <pubTime>2018-01-16T13:07:36.000Z</pubTime>
+        
+        <tag>deep learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://zydarchen.coding.me/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20171221/Styles-of-Truncated-Backpropagation/</loc>
+    <lastmod>2018-01-16T13:03:17.041Z</lastmod>
+    <data>
+        <display>
+        <title>【译】不同的截断反向传播</title>
+        <pubTime>2017-12-21T14:00:17.000Z</pubTime>
+        
+        <tag>deep learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="翻译" url="http://zydarchen.coding.me/categories/%E7%BF%BB%E8%AF%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+    
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20170707/hello-blog/</loc>
+    <lastmod>2018-01-16T03:05:42.668Z</lastmod>
+    <data>
+        <display>
+        <title>Hello Blog</title>
+        <pubTime>2017-07-06T16:00:00.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="程序员" url="http://zydarchen.coding.me/categories/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20170717/debug-spark/</loc>
+    <lastmod>2018-01-16T02:59:48.707Z</lastmod>
+    <data>
+        <display>
+        <title>spark日常填坑</title>
+        <pubTime>2017-07-17T08:37:50.000Z</pubTime>
+        
+        <tag>spark</tag>
+         
+         
+           
+             
+              <breadCrumb title="工具使用" url="http://zydarchen.coding.me/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20170730/ML-Foundations-2/</loc>
+    <lastmod>2018-01-16T02:55:27.068Z</lastmod>
+    <data>
+        <display>
+        <title>《机器学习基石》学习笔记#2</title>
+        <pubTime>2017-07-30T02:19:53.000Z</pubTime>
+        
+        <tag>machine learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://zydarchen.coding.me/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20170727/ML-Foundations-1/</loc>
+    <lastmod>2018-01-16T02:55:11.171Z</lastmod>
+    <data>
+        <display>
+        <title>《机器学习基石》学习笔记#1</title>
+        <pubTime>2017-07-27T11:49:35.000Z</pubTime>
+        
+        <tag>machine learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://zydarchen.coding.me/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20170711/jupyter-and-pycharm-for-remote/</loc>
+    <lastmod>2018-01-16T02:53:58.667Z</lastmod>
+    <data>
+        <display>
+        <title>jupyter与Pycharm远程开发</title>
+        <pubTime>2017-07-11T10:41:10.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="工具使用" url="http://zydarchen.coding.me/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20170714/91-Suggestions/</loc>
+    <lastmod>2018-01-16T02:49:32.796Z</lastmod>
+    <data>
+        <display>
+        <title>编写高质量代码</title>
+        <pubTime>2017-07-14T07:41:06.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://zydarchen.coding.me/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20170726/GoogleML-note/</loc>
+    <lastmod>2018-01-16T02:41:35.530Z</lastmod>
+    <data>
+        <display>
+        <title>GoogleML系列视频笔记</title>
+        <pubTime>2017-07-26T14:14:52.000Z</pubTime>
+        
+        <tag>tensorflow</tag>
+         
+        <tag>machine learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://zydarchen.coding.me/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20170816/git-note/</loc>
+    <lastmod>2018-01-16T02:39:45.874Z</lastmod>
+    <data>
+        <display>
+        <title>git安装与基本使用</title>
+        <pubTime>2017-08-16T03:20:10.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="工具使用" url="http://zydarchen.coding.me/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20171023/debug/</loc>
+    <lastmod>2018-01-16T02:19:40.889Z</lastmod>
+    <data>
+        <display>
+        <title>Debug Myself</title>
+        <pubTime>2017-10-23T09:28:23.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="程序员" url="http://zydarchen.coding.me/categories/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zydarchen.coding.me/20170825/auto-yys/</loc>
+    <lastmod>2018-01-16T02:12:43.242Z</lastmod>
+    <data>
+        <display>
+        <title>Python实现自动挂机脚本</title>
+        <pubTime>2017-08-25T09:33:18.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="不务正业" url="http://zydarchen.coding.me/categories/%E4%B8%8D%E5%8A%A1%E6%AD%A3%E4%B8%9A/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+</urlset>
