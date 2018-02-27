@@ -117,7 +117,7 @@
 
 
 
-  <title>标签: django | 不好吃の蛋蛋</title>
+  <title>Python Tips | 不好吃の蛋蛋</title>
   
 
 
@@ -173,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -296,58 +296,267 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>django<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zydarchen.github.io/20161026/python_tips/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zydarChen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不好吃の蛋蛋">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/20171008/django-demo/" itemprop="url">
-              
-                <span itemprop="name">简单的信息统计页面Demo</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Python Tips</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-08T15:06:03+08:00"
-              content="2017-10-08" >
-          10-08
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-26T10:49:35+08:00">2016-10-26</time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序员/" itemprop="url" rel="index"><span itemprop="name">程序员</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">2k</span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <p>【个人GitBook搬运】python使用的小Tips</p>
+<a id="more"></a>
+<h2 id="读写操作"><a href="#读写操作" class="headerlink" title="读写操作"></a>读写操作</h2><ul>
+<li><p>使用codecs模块</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line">fp1 = codecs.open(filename,<span class="string">'w'</span>)</span><br><span class="line">fp2 = codecs.open(filename, <span class="string">'r'</span>, <span class="string">'utf-8'</span>)</span><br><span class="line">lines = fp2.readlins()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件关闭</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">f = open(<span class="string">'/path/to/file'</span>, <span class="string">'r'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read()</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line"><span class="keyword">if</span> f:</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>更简洁的表达：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'/path/to/file'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line"><span class="keyword">print</span> f.read()</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>read()</code>&amp;<code>readline()</code>&amp;<code>readlines()</code></li>
+<li><code>read()</code>一次性读取文件的全部内容,<code>read(size)</code>每次最多读取size个字节的内容</li>
+<li><code>readline()</code>可以每次读取一行内容</li>
+<li><code>readlines()</code>一次读取所有内容并按行返回list</li>
+</ul>
+<p>总结<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"><span class="keyword">with</span> codecs.open(<span class="string">'/Users/michael/gbk.txt'</span>, <span class="string">'r'</span>, <span class="string">'gbk'</span>) <span class="keyword">as</span> f:</span><br><span class="line">f.read()</span><br></pre></td></tr></table></figure></p>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><p><code>shutil.copytree(windowsDir, photoDir)</code></p>
+<h2 id="工作目录"><a href="#工作目录" class="headerlink" title="工作目录"></a>工作目录</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">curDir = os.getcwd() <span class="comment">#获取当前工作目录</span></span><br><span class="line">chDir = os.chdir(path) <span class="comment"># 更改工作目录</span></span><br></pre></td></tr></table></figure>
+<h2 id="defaultdict-amp-dict"><a href="#defaultdict-amp-dict" class="headerlink" title="defaultdict &amp; dict = {}"></a>defaultdict &amp; dict = {}</h2><p><code>dict = defaultdict(default_factory)</code>就是一个字典，只不过python自动为其键值赋上初值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = [(<span class="string">'yellow'</span>, <span class="number">1</span>), (<span class="string">'blue'</span>, <span class="number">2</span>), (<span class="string">'yellow'</span>, <span class="number">3</span>), (<span class="string">'blue'</span>, <span class="number">4</span>), (<span class="string">'red'</span>, <span class="number">1</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = defaultdict(list)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> k, v <span class="keyword">in</span> s:</span><br><span class="line"><span class="meta">... </span>d[k].append(v)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.items()</span><br><span class="line">[(<span class="string">'blue'</span>, [<span class="number">2</span>, <span class="number">4</span>]), (<span class="string">'red'</span>, [<span class="number">1</span>]), (<span class="string">'yellow'</span>, [<span class="number">1</span>, <span class="number">3</span>])]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">'mississippi'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = defaultdict(int)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> k <span class="keyword">in</span> s:</span><br><span class="line"><span class="meta">... </span>d[k] += <span class="number">1</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.items()</span><br><span class="line">[(<span class="string">'i'</span>, <span class="number">4</span>), (<span class="string">'p'</span>, <span class="number">2</span>), (<span class="string">'s'</span>, <span class="number">4</span>), (<span class="string">'m'</span>, <span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[word <span class="keyword">for</span> word <span class="keyword">in</span> wordlist <span class="keyword">if</span> word != <span class="string">'*'</span>]  <span class="comment"># 生成列表</span></span><br><span class="line"><span class="keyword">for</span> i,e <span class="keyword">in</span> enumerate(list):  <span class="comment"># 取出列表元素以及所在位置</span></span><br></pre></td></tr></table></figure>
+<h2 id="下划线的使用"><a href="#下划线的使用" class="headerlink" title="下划线的使用"></a>下划线的使用</h2><blockquote>
+<p><a href="http://python.jobbole.com/81129/" target="_blank" rel="noopener">详解Python中的下划线</a><br><a href="http://blog.csdn.net/pfm685757/article/details/45918575" target="_blank" rel="noopener">Python单下划线/双下划线使用总结</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">object # public</span><br><span class="line">__object__  # special, python system use, user should not define like it</span><br><span class="line">__object  # private (name mangling during runtime)</span><br><span class="line">_object  # obey python coding convention, consider it as private</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>单下划线开始的成员变量叫做保护变量，意思是只有类对象和子类对象自己能访问到这些变量</li>
+<li>双下划线开始的是私有成员，意思是只有类对象自己能访问，连子类对象也不能访问到这个数据。</li>
+<li>以单下划线开头<code>_foo</code>的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用<code>from xxx import *</code>而导入</li>
+<li>以双下划线开头的<code>__foo</code>代表类的私有成员</li>
+<li>以双下划线开头和结尾的<code>__foo__</code>代表python里特殊方法专用的标识，如 <code>__init__()</code>代表类的构造函数。</li>
+</ul>
+<h2 id="内存释放"><a href="#内存释放" class="headerlink" title="内存释放"></a>内存释放</h2><p>先del，再显式调用gc.collect()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gc</span><br><span class="line"><span class="keyword">del</span> list</span><br><span class="line">gc.collect()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Buy me a cup of coffee</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="zydarChen 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="zydarChen 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/20160930/linux-tips/" rel="next" title="Linux Tips">
+                <i class="fa fa-chevron-left"></i> Linux Tips
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/20161029/encode_decode/" rel="prev" title="编码与解码">
+                编码与解码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTk1Mi82NTE3"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -368,8 +577,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -451,6 +669,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#读写操作"><span class="nav-number">1.</span> <span class="nav-text">读写操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作"><span class="nav-number">2.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作目录"><span class="nav-number">3.</span> <span class="nav-text">工作目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defaultdict-amp-dict"><span class="nav-number">4.</span> <span class="nav-text">defaultdict &amp; dict = {}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">5.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下划线的使用"><span class="nav-number">6.</span> <span class="nav-text">下划线的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存释放"><span class="nav-number">7.</span> <span class="nav-text">内存释放</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -604,6 +838,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.1"></script>
+
+
 
   
 
@@ -628,6 +866,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

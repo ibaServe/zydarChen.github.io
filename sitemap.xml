@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zydarchen.github.io/20161029/encode_decode/</loc>
+    
+    <lastmod>2018-02-27T07:50:14.113Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20161026/python_tips/</loc>
+    
+    <lastmod>2018-02-27T07:43:38.990Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zydarchen.github.io/20160927/spark_build/</loc>
     
     <lastmod>2018-02-27T07:28:17.566Z</lastmod>
