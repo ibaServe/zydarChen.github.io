@@ -418,11 +418,10 @@
       
 
       
-        <p>【个人GitBook搬运】本地搭建Spark<br><a id="more"></a></p>
-<p>#<br>Spark搭建</p>
+        <p>【个人GitBook搬运】本地搭建Spark</p>
+<a id="more"></a>
 <h2 id="JAVA安装与环境搭建"><a href="#JAVA安装与环境搭建" class="headerlink" title="JAVA安装与环境搭建"></a><a href="https://www.zydarchen.top/20160930/linux-tips/" target="_blank" rel="noopener">JAVA安装与环境搭建</a></h2><h2 id="ssh安装与测试"><a href="#ssh安装与测试" class="headerlink" title="ssh安装与测试"></a>ssh安装与测试</h2><blockquote>
-<p>单机Spark可略过</p>
-<p>略</p>
+<p>单机Spark可略过<br>略</p>
 </blockquote>
 <h2 id="hadoop安装与配置（可跳过）"><a href="#hadoop安装与配置（可跳过）" class="headerlink" title="hadoop安装与配置（可跳过）"></a>hadoop安装与配置（可跳过）</h2><ul>
 <li><a href="http://hadoop.apache.org/releases.html" target="_blank" rel="noopener">Apache Hadoop下载（binary文件）</a></li>
@@ -463,13 +462,12 @@
 <li><a href="http://spark.apache.org/downloads.html" target="_blank" rel="noopener">Spark下载</a></li>
 <li>解压放到/home/zydar/software下(不建议放在/usr下)</li>
 <li>配置/etc/profile：export SPARK_HOME,PATH追加:$SPARK_HOME/bin</li>
-<li>配置环境<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp ./conf/spark-env.sh.template ./conf/spark-env.sh</span><br><span class="line">vim ./conf/spark-env.sh</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<li><p>配置环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp ./conf/spark-env.sh.template ./conf/spark-env.sh</span><br><span class="line">vim ./conf/spark-env.sh</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>export JAVA_HOME=/usr/lib/java/jdk1.8.0_101<br>export SPARK_MASTER_IP=125.216.238.149<br>export SPARK_WORKER_MEMORY=2g<br>export HADOOP_CONF_DIR=/home/zydar/software/hadoop-2.7.3/etc/hadoop</p>
 </blockquote>
-<ul>
+</li>
 <li><p>启动Spark</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./sbin/start-all.sh</span><br></pre></td></tr></table></figure>
 </li>
@@ -496,16 +494,14 @@
 <p><a href="http://blog.javachen.com/2015/06/07/spark-configuration.html" target="_blank" rel="noopener">Spark配置</a>（<a href="https://spark.apache.org/docs/latest/configuration.html" target="_blank" rel="noopener">官方</a>）</p>
 </blockquote>
 <h3 id="Spark-on-Ipython-Notebook"><a href="#Spark-on-Ipython-Notebook" class="headerlink" title="Spark on Ipython Notebook"></a>Spark on Ipython Notebook</h3><ul>
-<li>Ipython Notebook安装与配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get install ipython#安装ipython</span><br><span class="line">apt-get install ipython-notebook#安装ipython notebook</span><br><span class="line">ipython profile create spark#创建spark的config</span><br></pre></td></tr></table></figure>
+<li><p>Ipython Notebook安装与配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get install ipython#安装ipython</span><br><span class="line">apt-get install ipython-notebook#安装ipython notebook</span><br><span class="line">ipython profile create spark#创建spark的config</span><br></pre></td></tr></table></figure>
+<p>记下生成的路径<code>/home/zydar/.ipython/profile_spark/ipython_notebook_config.py</code></p>
 </li>
-</ul>
-<p>记下生成的路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/zydar/.ipython/profile_spark/ipython_notebook_config.py</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>进入ipython设置密码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ipython</span><br><span class="line">In [1]:from IPython.lib import passwd</span><br><span class="line">In [2]:passwd()</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<li><p>进入ipython设置密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ipython</span><br><span class="line">In [1]:from IPython.lib import passwd</span><br><span class="line">In [2]:passwd()</span><br></pre></td></tr></table></figure>
 <p>记下返回的sha1</p>
-<ul>
+</li>
 <li><p>进入ipython_notebook_config.py文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.password = u&apos;sha1:67c34dbbc0f8:a96f9c64adbf4c58f2e71026a4bffb747d777c5a&apos;</span><br><span class="line">c.FileNotebookManager.notebook_dir = u&apos;/home/zydar/software/data/ipythonNotebook&apos;</span><br><span class="line"># c.NotebookApp.open_browser = False</span><br></pre></td></tr></table></figure>
 </li>
