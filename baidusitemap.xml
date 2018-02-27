@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://zydarchen.coding.me/20160930/linux-tips/</loc>
+    <lastmod>2018-02-27T07:05:35.837Z</lastmod>
+    <data>
+        <display>
+        <title>Linux Tips</title>
+        <pubTime>2016-09-30T07:52:22.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="程序员" url="http://zydarchen.coding.me/categories/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://zydarchen.coding.me/20170707/hello-blog/</loc>
     <lastmod>2018-02-27T05:13:22.547Z</lastmod>
     <data>
@@ -199,9 +219,9 @@
         <title>GoogleML系列视频笔记</title>
         <pubTime>2017-07-26T14:14:52.000Z</pubTime>
         
-        <tag>machine learning</tag>
-         
         <tag>tensorflow</tag>
+         
+        <tag>machine learning</tag>
          
          
            
