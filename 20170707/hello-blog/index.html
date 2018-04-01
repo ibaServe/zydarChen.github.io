@@ -576,7 +576,11 @@
 <h2 id="Q18：添加折叠块功能"><a href="#Q18：添加折叠块功能" class="headerlink" title="Q18：添加折叠块功能"></a>Q18：添加折叠块功能</h2><ul>
 <li><a href="https://blog.rmiao.top/hexo-fold-block/" target="_blank" rel="noopener">Hexo next博客添加折叠块功能添加折叠代码块</a></li>
 <li><a href="https://www.oyohyee.com/post/Note/fold" target="_blank" rel="noopener">jQuery 实现内容折叠功能</a></li>
-<li>搬运<ol>
+<li><p>使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% fold 提示语 %&#125;</span><br><span class="line">折叠内容</span><br><span class="line">&#123;% endfold %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>搬运</p>
+<ol>
 <li><code>themes/next/source/js/src/post-details.js</code>  # 主要实现<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 设置折叠快</span><br><span class="line">$(document).ready(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    $(document).on(<span class="string">'click'</span>, <span class="string">'.fold_hider'</span>, <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        $(<span class="string">'&gt;.fold'</span>, this.parentNode).slideToggle();</span><br><span class="line">        $(<span class="string">'&gt;:first'</span>, this).toggleClass(<span class="string">'open'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(<span class="string">"div.fold"</span>).css(<span class="string">"display"</span>,<span class="string">"none"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
