@@ -2050,7 +2050,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #52ff24;
+  background: #ff13f9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2922,8 +2922,8 @@ hr {
   cursor: pointer;
 }
 .close:after {
-  content: "▼";
+  content: "+";
 }
 .open:after {
-  content: "▲";
+  content: "-";
 }
