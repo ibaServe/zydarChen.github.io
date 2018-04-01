@@ -77,13 +77,13 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="https://zydarchen.github.io/about/index.html">
+<meta property="og:title" content="分类">
+<meta property="og:url" content="https://zydarchen.github.io/categories/index.html">
 <meta property="og:site_name" content="不好吃の蛋蛋">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-16T07:29:46.498Z">
+<meta property="og:updated_time" content="2018-01-16T07:30:05.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于">
+<meta name="twitter:title" content="分类">
 
 
 
@@ -111,7 +111,7 @@
 
 
 
-  <link rel="canonical" href="https://zydarchen.github.io/about/"/>
+  <link rel="canonical" href="https://zydarchen.github.io/categories/"/>
 
 
 
@@ -394,7 +394,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">11k</span>
+                <span title="字数统计">12k</span>
               
 
               
@@ -577,12 +577,20 @@
 <li><a href="https://blog.rmiao.top/hexo-fold-block/" target="_blank" rel="noopener">Hexo next博客添加折叠块功能添加折叠代码块</a></li>
 <li><a href="https://www.oyohyee.com/post/Note/fold" target="_blank" rel="noopener">jQuery 实现内容折叠功能</a></li>
 <li>搬运<ol>
-<li><code>themes/next/scripts/fold.js</code><div><div class="fold_hider"><div class="close hider_title">答案</div></div><div class="fold">
+<li><code>themes/next/source/js/src/post-details.js</code>  # 主要实现<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 设置折叠快</span><br><span class="line">$(document).ready(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    $(document).on(<span class="string">'click'</span>, <span class="string">'.fold_hider'</span>, <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        $(<span class="string">'&gt;.fold'</span>, this.parentNode).slideToggle();</span><br><span class="line">        $(<span class="string">'&gt;:first'</span>, this).toggleClass(<span class="string">'open'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(<span class="string">"div.fold"</span>).css(<span class="string">"display"</span>,<span class="string">"none"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+</div></div></li>
+<li><code>themes/next/scripts/fold.js</code>  # 使用内建标签<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fold (args, content) &#123;</span><br><span class="line">  var text = args[0];</span><br><span class="line">  <span class="keyword">if</span>(!text) text = <span class="string">"点击显/隐"</span>;</span><br><span class="line">  <span class="built_in">return</span> <span class="string">'&lt;div&gt;&lt;div class="fold_hider"&gt;&lt;div class="close hider_title"&gt;'</span> + text + <span class="string">'&lt;/div&gt;&lt;/div&gt;&lt;div class="fold"&gt;\n'</span> + hexo.render.renderSync(&#123;text: content, engine: <span class="string">'markdown'</span>&#125;) + <span class="string">'\n&lt;/div&gt;&lt;/div&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">hexo.extend.tag.register(<span class="string">'fold'</span>, fold, &#123;ends: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
 
 </div></div></li>
-<li><code>themes/next/scripts/tags.js</code>  # 修复代码块显示问题<div><div class="fold_hider"><div class="close hider_title">答案</div></div><div class="fold">
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fold (args, content) &#123;</span><br><span class="line">  var text = args[0];</span><br><span class="line">  <span class="keyword">if</span>(!text) text = <span class="string">"点击显/隐"</span>;</span><br><span class="line">  <span class="built_in">return</span> <span class="string">'&lt;div&gt;&lt;div class="fold_hider"&gt;&lt;div class="close hider_title"&gt;'</span> + text + <span class="string">'&lt;/div&gt;&lt;/div&gt;&lt;div class="fold"&gt;\n'</span> + hexo.render.renderSync(&#123;text: content, engine: <span class="string">'markdown'</span>&#125;) + <span class="string">'\n&lt;/div&gt;&lt;/div&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">hexo.extend.tag.register(<span class="string">'fold'</span>, fold, &#123;ends: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
+<li><code>themes/next/scripts/tags.js</code>  # 修复代码块显示问题<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const rEscapeContent = /&lt;escape(?:[^&gt;]*)&gt;([\s\S]*?)&lt;\/escape&gt;/g;</span><br><span class="line">const placeholder = <span class="string">'\uFFFD'</span>;</span><br><span class="line">const rPlaceholder = /(?:&lt;|&amp;lt;)\!--\uFFFD(\d+)--(?:&gt;|&amp;gt;)/g;</span><br><span class="line">const cache = [];</span><br><span class="line"><span class="keyword">function</span> escapeContent(str) &#123;</span><br><span class="line">  <span class="built_in">return</span> <span class="string">'&lt;!--'</span> + placeholder + (cache.push(str) - 1) + <span class="string">'--&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">hexo.extend.filter.register(<span class="string">'before_post_render'</span>, <span class="keyword">function</span>(data) &#123;</span><br><span class="line">  data.content = data.content.replace(rEscapeContent, <span class="keyword">function</span>(match, content) &#123;</span><br><span class="line">    <span class="built_in">return</span> escapeContent(content);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">return</span> data;</span><br><span class="line">&#125;);</span><br><span class="line">hexo.extend.filter.register(<span class="string">'after_post_render'</span>, <span class="keyword">function</span>(data) &#123;</span><br><span class="line">  data.content = data.content.replace(rPlaceholder, <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> cache[arguments[1]];</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">return</span> data;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+</div></div></li>
+<li><code>themes/next/source/css/_custom/custom.styl</code>  # 样式<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.hider_title&#123;</span><br><span class="line">    font-family: <span class="string">"Microsoft Yahei"</span>;</span><br><span class="line">    cursor: pointer;</span><br><span class="line">&#125;</span><br><span class="line">.close:after&#123;</span><br><span class="line">    content: <span class="string">"▼"</span>;</span><br><span class="line">&#125;</span><br><span class="line">.open:after&#123;</span><br><span class="line">    content: <span class="string">"▲"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </div></div>
 </li>
@@ -848,7 +856,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">81k</span>
+    <span title="站点总字数">82k</span>
   
 
   
