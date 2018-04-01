@@ -394,7 +394,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">10k</span>
+                <span title="字数统计">11k</span>
               
 
               
@@ -573,10 +573,23 @@
 </li>
 <li>添加Mathjax开关<br>How?</li>
 </ul>
-<h2 id="Q18：添加折叠块功能"><a href="#Q18：添加折叠块功能" class="headerlink" title="Q18：添加折叠块功能"></a>Q18：添加折叠块功能</h2><div><div class="fold_hider"><div class="close hider_title">答案</div></div><div class="fold">
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="string">'hello world'</span></span><br></pre></td></tr></table></figure>
+<h2 id="Q18：添加折叠块功能"><a href="#Q18：添加折叠块功能" class="headerlink" title="Q18：添加折叠块功能"></a>Q18：添加折叠块功能</h2><ul>
+<li><a href="https://blog.rmiao.top/hexo-fold-block/" target="_blank" rel="noopener">Hexo next博客添加折叠块功能添加折叠代码块</a></li>
+<li><a href="https://www.oyohyee.com/post/Note/fold" target="_blank" rel="noopener">jQuery 实现内容折叠功能</a></li>
+<li>搬运<ol>
+<li><code>themes/next/scripts/fold.js</code><div><div class="fold_hider"><div class="close hider_title">答案</div></div><div class="fold">
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fold (args, content) &#123;</span><br><span class="line">  var text = args[0];</span><br><span class="line">  <span class="keyword">if</span>(!text) text = <span class="string">"点击显/隐"</span>;</span><br><span class="line">  <span class="built_in">return</span> <span class="string">'&lt;div&gt;&lt;div class="fold_hider"&gt;&lt;div class="close hider_title"&gt;'</span> + text + <span class="string">'&lt;/div&gt;&lt;/div&gt;&lt;div class="fold"&gt;\n'</span> + hexo.render.renderSync(&#123;text: content, engine: <span class="string">'markdown'</span>&#125;) + <span class="string">'\n&lt;/div&gt;&lt;/div&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">hexo.extend.tag.register(<span class="string">'fold'</span>, fold, &#123;ends: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+</div></div></li>
+<li><code>themes/next/scripts/tags.js</code>  # 修复代码块显示问题<div><div class="fold_hider"><div class="close hider_title">答案</div></div><div class="fold">
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fold (args, content) &#123;</span><br><span class="line">  var text = args[0];</span><br><span class="line">  <span class="keyword">if</span>(!text) text = <span class="string">"点击显/隐"</span>;</span><br><span class="line">  <span class="built_in">return</span> <span class="string">'&lt;div&gt;&lt;div class="fold_hider"&gt;&lt;div class="close hider_title"&gt;'</span> + text + <span class="string">'&lt;/div&gt;&lt;/div&gt;&lt;div class="fold"&gt;\n'</span> + hexo.render.renderSync(&#123;text: content, engine: <span class="string">'markdown'</span>&#125;) + <span class="string">'\n&lt;/div&gt;&lt;/div&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line">hexo.extend.tag.register(<span class="string">'fold'</span>, fold, &#123;ends: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
 
 </div></div>
+</li>
+</ol>
+</li>
+</ul>
+
       
     </div>
     
@@ -835,7 +848,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">80k</span>
+    <span title="站点总字数">81k</span>
   
 
   
