@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://zydarchen.coding.me/20180402/offer/</loc>
+    <lastmod>2018-04-02T01:59:37.728Z</lastmod>
+    <data>
+        <display>
+        <title>【Fight for Offer】知识要点</title>
+        <pubTime>2018-04-02T01:51:31.000Z</pubTime>
+        
+        <tag>面经</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://zydarchen.coding.me/20170707/hello-blog/</loc>
     <lastmod>2018-04-01T07:09:17.242Z</lastmod>
     <data>
@@ -280,9 +297,9 @@
         <title>GoogleML系列视频笔记</title>
         <pubTime>2017-07-26T14:14:52.000Z</pubTime>
         
-        <tag>tensorflow</tag>
-         
         <tag>machine learning</tag>
+         
+        <tag>tensorflow</tag>
          
          
            
