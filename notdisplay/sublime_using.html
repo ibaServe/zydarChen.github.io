@@ -117,7 +117,7 @@
 
 
 
-  <title> | 不好吃の蛋蛋</title>
+  <title>sublime使用指南 | 不好吃の蛋蛋</title>
   
 
 
@@ -303,7 +303,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline"></h1>
+	<h1 class="post-title" itemprop="name headline">sublime使用指南</h1>
 
 
 
@@ -315,16 +315,14 @@
       <div class="post-body">
         
         
-          <ul>
-<li>侧边显示文件结构<ul>
+          <p>个人Sublime使用记录</p>
+<a id="more"></a>
+<h2 id="侧边显示文件结构"><a href="#侧边显示文件结构" class="headerlink" title="侧边显示文件结构"></a>侧边显示文件结构</h2><ul>
 <li>View-Side Bar-Show Side Bar</li>
 <li>File-Open Folder</li>
 <li>导入了文件夹才会有文件夹的显示</li>
 </ul>
-</li>
-<li>安装<a href="https://packagecontrol.io/installation" target="_blank" rel="noopener">Package Control</a></li>
-<li><p>python环境配置</p>
-<ul>
+<h2 id="安装Package-Control"><a href="#安装Package-Control" class="headerlink" title="安装Package Control"></a>安装<a href="https://packagecontrol.io/installation" target="_blank" rel="noopener">Package Control</a></h2><h2 id="python环境配置"><a href="#python环境配置" class="headerlink" title="python环境配置"></a>python环境配置</h2><ul>
 <li>安装SublimeRePL<ul>
 <li>Preferences-Package Control</li>
 <li>键入install packages</li>
@@ -338,9 +336,7 @@
 </ul>
 </li>
 </ul>
-</li>
-<li><p>markdown支持</p>
-<ul>
+<h2 id="markdown支持"><a href="#markdown支持" class="headerlink" title="markdown支持"></a>markdown支持</h2><ul>
 <li>安装SublimeRePL<ul>
 <li>Preferences-Package Control</li>
 <li>键入install packages</li>
@@ -349,12 +345,46 @@
 </ul>
 </li>
 <li>键位绑定<ul>
-<li>Preferences-Key Bindings<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"keys"</span>: [<span class="string">"f2"</span>],</span><br><span class="line">    <span class="string">"command"</span>: <span class="string">"markdown_preview"</span>, <span class="string">"args"</span>:</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"target"</span>: <span class="string">"browser"</span>,</span><br><span class="line">        <span class="string">"parser"</span>:<span class="string">"markdown"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
+<li>Preferences-Key Bindings<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"keys"</span>: [<span class="string">"f2"</span>],</span><br><span class="line">    <span class="string">"command"</span>: <span class="string">"markdown_preview"</span>, <span class="string">"args"</span>:</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"target"</span>: <span class="string">"browser"</span>,</span><br><span class="line">        <span class="string">"parser"</span>:<span class="string">"markdown"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
+<h2 id="OneNote更友好的代码显示"><a href="#OneNote更友好的代码显示" class="headerlink" title="OneNote更友好的代码显示"></a>OneNote更友好的代码显示</h2><blockquote>
+<p>方法很多，详见<a href="https://www.zhihu.com/question/21520340" target="_blank" rel="noopener">知乎</a></p>
+</blockquote>
+<p>个人觉得最好的方法Sublime+SublimeHighlight</p>
+<ul>
+<li>安装Sublime，好用的编辑器，不多说了</li>
+<li>安装<a href="https://packagecontrol.io/installation" target="_blank" rel="noopener">Package Control</a></li>
+<li>安装<a href="https://github.com/n1k0/SublimeHighlight" target="_blank" rel="noopener">SublimeHighlight</a><ul>
+<li>Preferences-Package Control</li>
+<li>键入Add Repository，用来添加插件安装源</li>
+<li>地址栏输入<code>https://github.com/n1k0/SublimeHighlight/tree/python3</code></li>
+<li>Preferences-Package Control</li>
+<li>键入install packages</li>
+<li>稍等片刻，键入SublimeHighlight</li>
+<li>等待安装即可</li>
+</ul>
+</li>
+<li><p>配置</p>
+<ul>
+<li>Preference-Package Setting-Sublime Highlight-User Setting<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"theme"</span>: <span class="string">"monokai"</span>,</span><br><span class="line">  <span class="string">"linenos"</span>: <span class="string">"inline"</span>,  <span class="comment"># 显示行号，不想显示设为false</span></span><br><span class="line">  <span class="string">"noclasses"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">"fontface"</span>: <span class="string">"Menlo"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>选中代码，右键<code>Copy as HTML</code></p>
+</li>
+<li>OneNote中新建1x1表格，复制进去即可</li>
+<li>最后也可以修改表格底色</li>
+</ul>
+<h2 id="Python的Tab键换成四个空格"><a href="#Python的Tab键换成四个空格" class="headerlink" title="Python的Tab键换成四个空格"></a>Python的Tab键换成四个空格</h2><ul>
+<li>Preferences-setting</li>
+<li>添加<code>&quot;translate_tabs_to_spaces&quot;: true</code></li>
+</ul>
+<h2 id="Python代码自动补全"><a href="#Python代码自动补全" class="headerlink" title="Python代码自动补全"></a>Python代码自动补全</h2><blockquote>
+<p>参考：<a href="https://www.cnblogs.com/zhaof/p/8126306.html" target="_blank" rel="noopener">让你用sublime写出最完美的python代码–windows环境</a></p>
+</blockquote>
 
         
       </div>
@@ -399,8 +429,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -437,7 +476,7 @@
                 
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -483,6 +522,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#侧边显示文件结构"><span class="nav-number">1.</span> <span class="nav-text">侧边显示文件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Package-Control"><span class="nav-number">2.</span> <span class="nav-text">安装Package Control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python环境配置"><span class="nav-number">3.</span> <span class="nav-text">python环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown支持"><span class="nav-number">4.</span> <span class="nav-text">markdown支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OneNote更友好的代码显示"><span class="nav-number">5.</span> <span class="nav-text">OneNote更友好的代码显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python的Tab键换成四个空格"><span class="nav-number">6.</span> <span class="nav-text">Python的Tab键换成四个空格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python代码自动补全"><span class="nav-number">7.</span> <span class="nav-text">Python代码自动补全</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -508,7 +563,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">82k</span>
+    <span title="站点总字数">83k</span>
   
 
   

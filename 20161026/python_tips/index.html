@@ -453,6 +453,15 @@
 </ul>
 <h2 id="内存释放"><a href="#内存释放" class="headerlink" title="内存释放"></a>内存释放</h2><p>先del，再显式调用gc.collect()</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gc</span><br><span class="line"><span class="keyword">del</span> list</span><br><span class="line">gc.collect()</span><br></pre></td></tr></table></figure>
+<h2 id="conda基础使用"><a href="#conda基础使用" class="headerlink" title="conda基础使用"></a>conda基础使用</h2><ul>
+<li><code>conda create --name env_name python=3.6</code></li>
+<li><code>activate env_name</code> or <code>source activate env_name</code></li>
+<li><code>deactivate env_name</code> or <code>source deactivate env_name</code></li>
+<li><code>conda remove --nme env_name --all</code></li>
+<li><code>conda info -e</code></li>
+<li><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</code> and <code>conda config --set show_channel_urls yes</code></li>
+</ul>
+
       
     </div>
     
@@ -498,7 +507,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -624,7 +633,7 @@
                 
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -679,7 +688,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#读写操作"><span class="nav-number">1.</span> <span class="nav-text">读写操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作"><span class="nav-number">2.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作目录"><span class="nav-number">3.</span> <span class="nav-text">工作目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defaultdict-amp-dict"><span class="nav-number">4.</span> <span class="nav-text">defaultdict &amp; dict = {}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">5.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下划线的使用"><span class="nav-number">6.</span> <span class="nav-text">下划线的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存释放"><span class="nav-number">7.</span> <span class="nav-text">内存释放</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#读写操作"><span class="nav-number">1.</span> <span class="nav-text">读写操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作"><span class="nav-number">2.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作目录"><span class="nav-number">3.</span> <span class="nav-text">工作目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defaultdict-amp-dict"><span class="nav-number">4.</span> <span class="nav-text">defaultdict &amp; dict = {}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">5.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下划线的使用"><span class="nav-number">6.</span> <span class="nav-text">下划线的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存释放"><span class="nav-number">7.</span> <span class="nav-text">内存释放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#conda基础使用"><span class="nav-number">8.</span> <span class="nav-text">conda基础使用</span></a></li></ol></div>
             
 
           </div>
@@ -711,7 +720,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">82k</span>
+    <span title="站点总字数">83k</span>
   
 
   

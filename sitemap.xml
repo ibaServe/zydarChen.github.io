@@ -2,6 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zydarchen.github.io/20161026/python_tips/</loc>
+    
+    <lastmod>2018-05-09T15:05:06.233Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20170816/git-note/</loc>
+    
+    <lastmod>2018-05-09T14:54:48.537Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/notdisplay/sublime_using.html</loc>
+    
+    <lastmod>2018-04-12T13:37:53.909Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20170711/jupyter-and-pycharm-for-remote/</loc>
+    
+    <lastmod>2018-04-12T13:25:49.490Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20161029/encode_decode/</loc>
+    
+    <lastmod>2018-04-12T13:25:35.018Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20171008/django-demo/</loc>
+    
+    <lastmod>2018-04-12T13:25:29.286Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20170825/auto-yys/</loc>
+    
+    <lastmod>2018-04-12T13:24:55.594Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20170714/91-Suggestions/</loc>
+    
+    <lastmod>2018-04-12T13:24:38.799Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zydarchen.github.io/20180402/offer/</loc>
     
     <lastmod>2018-04-02T02:13:05.583Z</lastmod>
@@ -16,27 +72,6 @@
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/notdisplay/sublime_using.html</loc>
-    
-    <lastmod>2018-03-29T02:54:43.536Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20161029/encode_decode/</loc>
-    
-    <lastmod>2018-02-27T07:54:58.727Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20161026/python_tips/</loc>
-    
-    <lastmod>2018-02-27T07:43:38.990Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zydarchen.github.io/20160927/spark_build/</loc>
     
     <lastmod>2018-02-27T07:28:17.566Z</lastmod>
@@ -47,13 +82,6 @@
     <loc>https://zydarchen.github.io/20160930/linux-tips/</loc>
     
     <lastmod>2018-02-27T07:09:42.535Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20171008/django-demo/</loc>
-    
-    <lastmod>2018-02-27T05:11:33.130Z</lastmod>
     
   </url>
   
@@ -135,20 +163,6 @@
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20170711/jupyter-and-pycharm-for-remote/</loc>
-    
-    <lastmod>2018-01-16T02:53:58.667Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20170714/91-Suggestions/</loc>
-    
-    <lastmod>2018-01-16T02:49:32.796Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zydarchen.github.io/20170726/GoogleML-note/</loc>
     
     <lastmod>2018-01-16T02:41:35.530Z</lastmod>
@@ -156,23 +170,9 @@
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20170816/git-note/</loc>
-    
-    <lastmod>2018-01-16T02:39:45.874Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zydarchen.github.io/20171023/debug/</loc>
     
     <lastmod>2018-01-16T02:19:40.889Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20170825/auto-yys/</loc>
-    
-    <lastmod>2018-01-16T02:12:43.242Z</lastmod>
     
   </url>
   

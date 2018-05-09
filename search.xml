@@ -46,8 +46,8 @@
         <category>不务正业</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>django</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -58,13 +58,13 @@
         <category>不务正业</category>
       </categories>
       <tags>
-        <tag>python</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[git安装与基本使用]]></title>
     <url>%2F20170816%2Fgit-note%2F</url>
-    <content type="text"><![CDATA[个人使用git问题记录 安装 Windows 下载Git 双击安装，一路next linux sudo apt-get install git 配置用户 12git config --global user.name 'zydarChen'git config --global user.email 'zydarChen@outlook.com' 生成ssh key 1ssh-keygen -t rsa -C 'zydarChen@outlook.com' 与GitHub、Coding连接 首先将id_rsa.pub内容复制进账户SSH Key 12ssh -T git@github.comssh -T git@git.coding.net Git基本使用参考： 廖雪峰Git教程 莫烦PythonGit版本管理 1234567891011121314git clone https://github.com/scut-githuber/os-util.git # clone repository到本地cd gitDirgit init # 初始化空的Git仓库repositorygit add filename # 将文件添加到repositorygit add -A # 添加所有文件到repositorygit commit -m &quot;wrote a readme file&quot; # 提交并写提交说明git status # 查看已修改文件git diff filename # 查看filename被修改的内容git log [--pretty=oneline]# 查看提交日志git reset --hard HEAD^ # 滚回上一版本git reset --hard 3628164 # 指定ID回滚或者重做，`3628164`是commit id，git自动补全git reflog # 查看命令历史，可以查看各个版本的commit idgit checkout -- name # 让这个文件回到最近一次git commit或git add时的状态。git reset HEAD filename # 将filename从暂存区退回工作区 工作区和暂存区 工作区:工作目录，如gitDir 版本库：工作区中的隐藏目录.git 第一步是用git add把文件添加进去，实际上就是把文件修改添加到暂存区；第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。 流程图 初始在工作目录中添加’test.py’文件，文件处于’untracked’状态：红色的’??’ 12$ git status -s?? test.py add之后，文件处于’staged’状态：绿色的’A’ 123git add test.py$ git status -sA test.py commit之后，文件处于’unmodified’状态，working tree clean git log --oneline查看commit记录。查看使用reset可回到之前版本，git reset --hard HEAD^，此时工作目录中’test.py’文件将被删除。 add之后，修改’test.py’文件内容，文件处于’modified’状态：绿色的’A’——表示新增文件操作已添加至暂存区，可提交，红色的’M’——表示修改操作仍位于工作区，不可提交。此时执行commit只会提交新增文件操作。12345$ git status -sAM test.py$ git commit -m 'test.py'$ git status -sM test.py 撤销修改 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，在没有推送到远程库的前提下，git reset --hard HEAD^滚回上一版本。 误删与恢复git checkout -- test.txtgit checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。 分支使用 git branch：查看分支 git branch &lt;name&gt;：创建分支 git checkout &lt;name&gt;：切换分支 git checkout -b &lt;name&gt;：创建并切换分支 git merge &lt;name&gt;：合并某分支到当前分支 git merge --no-ff -m &quot;merge with no-ff&quot; &lt;name&gt;:强制禁用Fast forward模式，不丢掉分支信息 git branch -d &lt;name&gt;：删除分支 bug分支当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。 git stash:”储存”当前工作现场 git stash list:查看已储存现场 git stash apply:恢复现场 git stash pop：恢复现场并产出储存 JetBrains系列使用git小结 先在GitHub上建好repository，git clone 到本地 鼓励大量使用分支 通过创建bug分支的方式来修复bug 开发一个新feature，最好新建一个分支]]></content>
+    <content type="text"><![CDATA[个人使用git问题记录 安装 Windows 下载Git 双击安装，一路next linux sudo apt-get install git 配置用户 12git config --global user.name 'zydarChen'git config --global user.email 'zydarChen@outlook.com' 生成ssh key 1ssh-keygen -t rsa -C 'zydarChen@outlook.com' 与GitHub、Coding连接 首先将id_rsa.pub内容复制进账户SSH Key 12ssh -T git@github.comssh -T git@git.coding.net Git基本使用参考： 廖雪峰Git教程 莫烦PythonGit版本管理 1234567891011121314git clone https://github.com/scut-githuber/os-util.git # clone repository到本地cd gitDirgit init # 初始化空的Git仓库repositorygit add filename # 将文件添加到repositorygit add -A # 添加所有文件到repositorygit commit -m &quot;wrote a readme file&quot; # 提交并写提交说明git status # 查看已修改文件git diff filename # 查看filename被修改的内容git log [--pretty=oneline]# 查看提交日志git reset --hard HEAD^ # 滚回上一版本git reset --hard 3628164 # 指定ID回滚或者重做，`3628164`是commit id，git自动补全git reflog # 查看命令历史，可以查看各个版本的commit idgit checkout -- name # 让这个文件回到最近一次git commit或git add时的状态。git reset HEAD filename # 将filename从暂存区退回工作区 工作区和暂存区 工作区:工作目录，如gitDir 版本库：工作区中的隐藏目录.git 第一步是用git add把文件添加进去，实际上就是把文件修改添加到暂存区；第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。 流程图 初始在工作目录中添加’test.py’文件，文件处于’untracked’状态：红色的’??’ 12$ git status -s?? test.py add之后，文件处于’staged’状态：绿色的’A’ 123git add test.py$ git status -sA test.py commit之后，文件处于’unmodified’状态，working tree clean git log --oneline查看commit记录。查看使用reset可回到之前版本，git reset --hard HEAD^，此时工作目录中’test.py’文件将被删除。 add之后，修改’test.py’文件内容，文件处于’modified’状态：绿色的’A’——表示新增文件操作已添加至暂存区，可提交，红色的’M’——表示修改操作仍位于工作区，不可提交。此时执行commit只会提交新增文件操作。12345$ git status -sAM test.py$ git commit -m 'test.py'$ git status -sM test.py 撤销修改 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，在没有推送到远程库的前提下，git reset --hard HEAD^滚回上一版本。 误删与恢复git checkout -- test.txtgit checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。 分支使用 git branch：查看分支 git branch &lt;name&gt;：创建分支 git checkout &lt;name&gt;：切换分支 git checkout -b &lt;name&gt;：创建并切换分支 git merge &lt;name&gt;：合并某分支到当前分支 git merge --no-ff -m &quot;merge with no-ff&quot; &lt;name&gt;:强制禁用Fast forward模式，不丢掉分支信息 git branch -d &lt;name&gt;：删除分支 bug分支当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。 git stash:”储存”当前工作现场 git stash list:查看已储存现场 git stash apply:恢复现场 git stash pop：恢复现场并产出储存 JetBrains系列使用git小结 先在GitHub上建好repository，git clone 到本地 鼓励大量使用分支 通过创建bug分支的方式来修复bug 开发一个新feature，最好新建一个分支 .gitignore文件 #注释行 dir/忽略dir文件 *.zip忽略zip文件 ignore.md忽略单个文件 !不忽略 doc/*.md忽略doc/目录下所有的.md文件，但不包括其他子目录下的.md文件]]></content>
       <categories>
         <category>工具使用</category>
       </categories>
@@ -125,7 +125,7 @@
         <category>读书笔记</category>
       </categories>
       <tags>
-        <tag>python</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -136,7 +136,7 @@
         <category>工具使用</category>
       </categories>
       <tags>
-        <tag>python</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -158,18 +158,18 @@
         <category>程序员</category>
       </categories>
       <tags>
-        <tag>python</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Python Tips]]></title>
     <url>%2F20161026%2Fpython_tips%2F</url>
-    <content type="text"><![CDATA[【个人GitBook搬运】python使用的小Tips 读写操作 使用codecs模块 1234import codecsfp1 = codecs.open(filename,'w')fp2 = codecs.open(filename, 'r', 'utf-8')lines = fp2.readlins() 文件关闭 123456try:f = open('/path/to/file', 'r')print f.read()finally:if f:f.close() 更简洁的表达：12with open('/path/to/file', 'r') as f:print f.read() read()&amp;readline()&amp;readlines() read()一次性读取文件的全部内容,read(size)每次最多读取size个字节的内容 readline()可以每次读取一行内容 readlines()一次读取所有内容并按行返回list 总结123import codecswith codecs.open('/Users/michael/gbk.txt', 'r', 'gbk') as f:f.read() 文件操作shutil.copytree(windowsDir, photoDir) 工作目录123import oscurDir = os.getcwd() #获取当前工作目录chDir = os.chdir(path) # 更改工作目录 defaultdict &amp; dict = {}dict = defaultdict(default_factory)就是一个字典，只不过python自动为其键值赋上初值 123456789101112131415&gt;&gt;&gt; s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]&gt;&gt;&gt; d = defaultdict(list)&gt;&gt;&gt; for k, v in s:... d[k].append(v)...&gt;&gt;&gt; d.items()[('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])]&gt;&gt;&gt; s = 'mississippi'&gt;&gt;&gt; d = defaultdict(int)&gt;&gt;&gt; for k in s:... d[k] += 1...&gt;&gt;&gt; d.items()[('i', 4), ('p', 2), ('s', 4), ('m', 1)] list12[word for word in wordlist if word != '*'] # 生成列表for i,e in enumerate(list): # 取出列表元素以及所在位置 下划线的使用 详解Python中的下划线Python单下划线/双下划线使用总结1234object # public__object__ # special, python system use, user should not define like it__object # private (name mangling during runtime)_object # obey python coding convention, consider it as private 单下划线开始的成员变量叫做保护变量，意思是只有类对象和子类对象自己能访问到这些变量 双下划线开始的是私有成员，意思是只有类对象自己能访问，连子类对象也不能访问到这个数据。 以单下划线开头_foo的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用from xxx import *而导入 以双下划线开头的__foo代表类的私有成员 以双下划线开头和结尾的__foo__代表python里特殊方法专用的标识，如 __init__()代表类的构造函数。 内存释放先del，再显式调用gc.collect() 123import gcdel listgc.collect()]]></content>
+    <content type="text"><![CDATA[【个人GitBook搬运】python使用的小Tips 读写操作 使用codecs模块 1234import codecsfp1 = codecs.open(filename,'w')fp2 = codecs.open(filename, 'r', 'utf-8')lines = fp2.readlins() 文件关闭 123456try:f = open('/path/to/file', 'r')print f.read()finally:if f:f.close() 更简洁的表达：12with open('/path/to/file', 'r') as f:print f.read() read()&amp;readline()&amp;readlines() read()一次性读取文件的全部内容,read(size)每次最多读取size个字节的内容 readline()可以每次读取一行内容 readlines()一次读取所有内容并按行返回list 总结123import codecswith codecs.open('/Users/michael/gbk.txt', 'r', 'gbk') as f:f.read() 文件操作shutil.copytree(windowsDir, photoDir) 工作目录123import oscurDir = os.getcwd() #获取当前工作目录chDir = os.chdir(path) # 更改工作目录 defaultdict &amp; dict = {}dict = defaultdict(default_factory)就是一个字典，只不过python自动为其键值赋上初值 123456789101112131415&gt;&gt;&gt; s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]&gt;&gt;&gt; d = defaultdict(list)&gt;&gt;&gt; for k, v in s:... d[k].append(v)...&gt;&gt;&gt; d.items()[('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])]&gt;&gt;&gt; s = 'mississippi'&gt;&gt;&gt; d = defaultdict(int)&gt;&gt;&gt; for k in s:... d[k] += 1...&gt;&gt;&gt; d.items()[('i', 4), ('p', 2), ('s', 4), ('m', 1)] list12[word for word in wordlist if word != '*'] # 生成列表for i,e in enumerate(list): # 取出列表元素以及所在位置 下划线的使用 详解Python中的下划线Python单下划线/双下划线使用总结1234object # public__object__ # special, python system use, user should not define like it__object # private (name mangling during runtime)_object # obey python coding convention, consider it as private 单下划线开始的成员变量叫做保护变量，意思是只有类对象和子类对象自己能访问到这些变量 双下划线开始的是私有成员，意思是只有类对象自己能访问，连子类对象也不能访问到这个数据。 以单下划线开头_foo的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用from xxx import *而导入 以双下划线开头的__foo代表类的私有成员 以双下划线开头和结尾的__foo__代表python里特殊方法专用的标识，如 __init__()代表类的构造函数。 内存释放先del，再显式调用gc.collect() 123import gcdel listgc.collect() conda基础使用 conda create --name env_name python=3.6 activate env_name or source activate env_name deactivate env_name or source deactivate env_name conda remove --nme env_name --all conda info -e conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ and conda config --set show_channel_urls yes]]></content>
       <categories>
         <category>程序员</category>
       </categories>
       <tags>
-        <tag>python</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
