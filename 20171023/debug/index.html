@@ -65,7 +65,7 @@
 
 
 
-  <meta name="keywords" content=",,,,,," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -76,18 +76,14 @@
 
 
 
-<meta name="description" content="个人Sublime使用记录">
-<meta name="keywords" content="Python">
 <meta property="og:type" content="website">
-<meta property="og:title" content="sublime使用指南">
-<meta property="og:url" content="https://zydarchen.github.io/notdisplay/sublime_using.html">
+<meta property="og:title" content="关于">
+<meta property="og:url" content="https://zydarchen.github.io/about/index.html">
 <meta property="og:site_name" content="不好吃の蛋蛋">
-<meta property="og:description" content="个人Sublime使用记录">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-12T13:37:53.909Z">
+<meta property="og:updated_time" content="2018-01-16T07:29:46.498Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sublime使用指南">
-<meta name="twitter:description" content="个人Sublime使用记录">
+<meta name="twitter:title" content="关于">
 
 
 
@@ -115,7 +111,7 @@
 
 
 
-  <link rel="canonical" href="https://zydarchen.github.io/notdisplay/sublime_using.html"/>
+  <link rel="canonical" href="https://zydarchen.github.io/about/"/>
 
 
 
@@ -456,6 +452,17 @@
 </li>
 </ul>
 </li>
+<li><p>【2018.05.11】升级Tensorflow</p>
+<ul>
+<li>tensorflow升级到1.8之后，cuda需要升级到9.0</li>
+<li>下载<a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Windows&amp;target_arch=x86_64&amp;target_version=10&amp;target_type=exelocal" target="_blank" rel="noopener">cuda_9.0.176_win10.exe</a>以及<a href="https://developer.nvidia.com/rdp/cudnn-download" target="_blank" rel="noopener">cudnn-9.0-windows10-x64-v7.1.zip</a></li>
+<li><strong>自定义</strong>安装cuda_9.0.176_win10.exe，只安装CUDA</li>
+<li>解压cudnn-9.0-windows10-x64-v7.1.zip，并将三个文件复制到C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0中的相应位置</li>
+<li>在系统环境变量中删除之前版本的CUDA</li>
+<li><code>nvcc -V</code>验证版本</li>
+<li>目前tensorflow最新版本1.8.0只支持到CUDA9.0，如果想使用CUDA9.1，可以使用大神预编译好的版本，<a href="https://github.com/fo40225/tensorflow-windows-wheel" target="_blank" rel="noopener">GitHUB地址</a>。</li>
+</ul>
+</li>
 </ul>
 <h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ul>
 <li>【2017.11.22】.gitignore文件<ul>
@@ -476,6 +483,7 @@
 </ul>
 </li>
 </ul>
+<h2 id="XGBOOST"><a href="#XGBOOST" class="headerlink" title="XGBOOST"></a>XGBOOST</h2><p>​    【2018.05.15】Ubuntu<code>pip install xgboost</code>（有毒）</p>
 
       
     </div>
@@ -697,7 +705,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Keras"><span class="nav-number">1.</span> <span class="nav-text">Keras</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow"><span class="nav-number">2.</span> <span class="nav-text">TensorFlow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">3.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pycharm"><span class="nav-number">4.</span> <span class="nav-text">Pycharm</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Keras"><span class="nav-number">1.</span> <span class="nav-text">Keras</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow"><span class="nav-number">2.</span> <span class="nav-text">TensorFlow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">3.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pycharm"><span class="nav-number">4.</span> <span class="nav-text">Pycharm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XGBOOST"><span class="nav-number">5.</span> <span class="nav-text">XGBOOST</span></a></li></ol></div>
             
 
           </div>
@@ -729,7 +737,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">85k</span>
   
 
   

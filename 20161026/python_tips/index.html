@@ -65,7 +65,7 @@
 
 
 
-  <meta name="keywords" content=",,,,,," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -76,18 +76,14 @@
 
 
 
-<meta name="description" content="个人Sublime使用记录">
-<meta name="keywords" content="Python">
 <meta property="og:type" content="website">
-<meta property="og:title" content="sublime使用指南">
-<meta property="og:url" content="https://zydarchen.github.io/notdisplay/sublime_using.html">
+<meta property="og:title" content="关于">
+<meta property="og:url" content="https://zydarchen.github.io/about/index.html">
 <meta property="og:site_name" content="不好吃の蛋蛋">
-<meta property="og:description" content="个人Sublime使用记录">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-12T13:37:53.909Z">
+<meta property="og:updated_time" content="2018-01-16T07:29:46.498Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sublime使用指南">
-<meta name="twitter:description" content="个人Sublime使用记录">
+<meta name="twitter:title" content="关于">
 
 
 
@@ -115,7 +111,7 @@
 
 
 
-  <link rel="canonical" href="https://zydarchen.github.io/notdisplay/sublime_using.html"/>
+  <link rel="canonical" href="https://zydarchen.github.io/about/"/>
 
 
 
@@ -465,7 +461,16 @@
 <li><code>conda info -e</code></li>
 <li><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</code> and <code>conda config --set show_channel_urls yes</code></li>
 </ul>
-
+<h2 id="使用镜像提升pip下载速度"><a href="#使用镜像提升pip下载速度" class="headerlink" title="使用镜像提升pip下载速度"></a>使用镜像提升pip下载速度</h2><ul>
+<li><p><a href="http://www.cnblogs.com/microman/p/6107879.html" target="_blank" rel="noopener">让PIP源使用国内镜像，提升下载速度和安装成功率</a></p>
+</li>
+<li><p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/" target="_blank" rel="noopener">pypi 镜像使用帮助</a></p>
+</li>
+<li><p>window在<code>C:\Users\user_name</code>下创建<code>pip/pip.ini</code>文件，文件内容为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="pass"><a href="#pass" class="headerlink" title="pass"></a>pass</h2>
       
     </div>
     
@@ -692,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#读写操作"><span class="nav-number">1.</span> <span class="nav-text">读写操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作"><span class="nav-number">2.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作目录"><span class="nav-number">3.</span> <span class="nav-text">工作目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defaultdict-amp-dict"><span class="nav-number">4.</span> <span class="nav-text">defaultdict &amp; dict = {}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">5.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下划线的使用"><span class="nav-number">6.</span> <span class="nav-text">下划线的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存释放"><span class="nav-number">7.</span> <span class="nav-text">内存释放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#conda基础使用"><span class="nav-number">8.</span> <span class="nav-text">conda基础使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#读写操作"><span class="nav-number">1.</span> <span class="nav-text">读写操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作"><span class="nav-number">2.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作目录"><span class="nav-number">3.</span> <span class="nav-text">工作目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defaultdict-amp-dict"><span class="nav-number">4.</span> <span class="nav-text">defaultdict &amp; dict = {}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">5.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下划线的使用"><span class="nav-number">6.</span> <span class="nav-text">下划线的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存释放"><span class="nav-number">7.</span> <span class="nav-text">内存释放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#conda基础使用"><span class="nav-number">8.</span> <span class="nav-text">conda基础使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用镜像提升pip下载速度"><span class="nav-number">9.</span> <span class="nav-text">使用镜像提升pip下载速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass"><span class="nav-number">10.</span> <span class="nav-text">pass</span></a></li></ol></div>
             
 
           </div>
@@ -724,7 +729,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">85k</span>
   
 
   
