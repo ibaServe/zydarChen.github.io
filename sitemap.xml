@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zydarchen.github.io/20180612/cs224n-1/</loc>
+    
+    <lastmod>2018-06-12T08:18:23.377Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/notdisplay/CS224N_notebook.html</loc>
+    
+    <lastmod>2018-06-04T15:09:16.045Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zydarchen.github.io/20171023/debug/</loc>
     
-    <lastmod>2018-05-15T01:55:16.805Z</lastmod>
+    <lastmod>2018-05-15T01:55:16.804Z</lastmod>
     
   </url>
   
@@ -18,7 +32,7 @@
   <url>
     <loc>https://zydarchen.github.io/20170816/git-note/</loc>
     
-    <lastmod>2018-05-09T14:54:48.537Z</lastmod>
+    <lastmod>2018-05-09T14:54:48.536Z</lastmod>
     
   </url>
   
@@ -46,7 +60,7 @@
   <url>
     <loc>https://zydarchen.github.io/20161029/encode_decode/</loc>
     
-    <lastmod>2018-04-12T13:25:35.018Z</lastmod>
+    <lastmod>2018-04-12T13:25:35.017Z</lastmod>
     
   </url>
   
@@ -95,7 +109,7 @@
   <url>
     <loc>https://zydarchen.github.io/20160930/linux-tips/</loc>
     
-    <lastmod>2018-02-27T07:09:42.535Z</lastmod>
+    <lastmod>2018-02-27T07:09:42.534Z</lastmod>
     
   </url>
   
@@ -109,7 +123,7 @@
   <url>
     <loc>https://zydarchen.github.io/20171221/Styles-of-Truncated-Backpropagation/</loc>
     
-    <lastmod>2018-01-16T13:03:17.041Z</lastmod>
+    <lastmod>2018-01-16T13:03:17.040Z</lastmod>
     
   </url>
   
@@ -130,28 +144,28 @@
   <url>
     <loc>https://zydarchen.github.io/categories/index.html</loc>
     
-    <lastmod>2018-01-16T07:30:05.882Z</lastmod>
+    <lastmod>2018-01-16T07:30:05.881Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://zydarchen.github.io/commonweal/index.html</loc>
     
-    <lastmod>2018-01-16T07:29:55.426Z</lastmod>
+    <lastmod>2018-01-16T07:29:55.425Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://zydarchen.github.io/about/index.html</loc>
     
-    <lastmod>2018-01-16T07:29:46.498Z</lastmod>
+    <lastmod>2018-01-16T07:29:46.497Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://zydarchen.github.io/tags/index.html</loc>
     
-    <lastmod>2018-01-16T07:29:37.314Z</lastmod>
+    <lastmod>2018-01-16T07:29:37.313Z</lastmod>
     
   </url>
   
@@ -165,14 +179,14 @@
   <url>
     <loc>https://zydarchen.github.io/20170730/ML-Foundations-2/</loc>
     
-    <lastmod>2018-01-16T02:55:27.068Z</lastmod>
+    <lastmod>2018-01-16T02:55:27.067Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://zydarchen.github.io/20170727/ML-Foundations-1/</loc>
     
-    <lastmod>2018-01-16T02:55:11.171Z</lastmod>
+    <lastmod>2018-01-16T02:55:11.170Z</lastmod>
     
   </url>
   
@@ -186,7 +200,7 @@
   <url>
     <loc>https://zydarchen.github.io/notdisplay/foshan2017.html</loc>
     
-    <lastmod>2017-12-21T15:16:19.803Z</lastmod>
+    <lastmod>2017-12-21T15:16:19.802Z</lastmod>
     
   </url>
   
