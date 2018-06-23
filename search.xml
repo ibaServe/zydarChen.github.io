@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[江南烟雨——杭州]]></title>
+    <url>%2F20180623%2Fhangzhou2018%2F</url>
+    <content type="text"><![CDATA[杭州游玩 交通 &amp; 行程交通 机场大巴滨江线 沿途站点：海外创业人才基地——华美达酒店——地铁江陵路站——杭州萧山国际机场 机场发车时间：08：20、09：20、10：00、10：50、11：20、12：50、14：00、15：00、16：20、17：50、 18：50、20：00 滨江发车时间：06：00、07：30、08：30、09：20、10：00、11：20、12：30、13：40、14：50、 16：00、 17：20、18：40 景点 灵隐寺 开放时间：每天7:00-18:15 灵隐寺在飞来峰内，飞来峰门票：￥45，灵隐寺门票：￥30 断桥残雪- 西湖音乐喷泉 时间：每天晚上七点、八点 行程 Day1 断桥残血(10分钟)—&gt;白堤(20分钟)—&gt;孤山(1-2小时)—&gt;曲院风荷(1小时)—&gt;苏堤春晓(30分钟)—&gt;花港观鱼(1小时)—&gt;吴山广场(1小时)—&gt;西湖音乐喷泉(10分钟) Day2 飞来峰(1小时)—&gt;灵隐寺(1-2小时)—&gt;浴鹄湾(1小时)—&gt;六和听涛/六合塔(1小时)—&gt;河坊街(1-2小时)]]></content>
+      <tags>
+        <tag>走走看看</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CS224N笔记-Lecture1:Introduction]]></title>
     <url>%2F20180612%2Fcs224n-1%2F</url>
     <content type="text"><![CDATA[What is Natural Language Processing？ What’s special about human language? What’s Deep Learning? Why is NLP hard？ Deep NLP = Deep Learning + NLP What is Natural Language Processing？ 自然语言处理是计算机科学、人工智能以及语言学的交叉学科 自然语言处理的目标是让计算机理解人类语言，以完成有意义的任务，如机器翻译或QA等。 NLP Levels speech or text annlysis morphological analysis，形态分析 syntactic analysis，句法分析 semantic interpretation，语义分析 discourse processing，对话处理（理解上下文） What’s special about human language? 人类语言是一种离散/符号/类别信号系统 What’s Deep Learning? 深度学习是机器学习的一种 机器学习需要人工设计特征，然后把特征交给某个机器学习算法，机器为这些特征调整找到合适的权值，以生成最合适的模型；事实上，在这一过程中，是人类在学习，而机器只不过是解数值优化的题目而已。 Machine Learning in Practice = Describing your data with features a computer can understand (Domain specific, requires Ph.D. level talent) + Learning algorithm (Optimizing the weights on features) 表征学习（Representation Learning）是指通过对原始数据的学习，自动生成特征。 深度学习是表征学习的一部分，使用多层的表征学习（learned representations），故称为深度学习。 Reasons for Exploring Deep Learning 人工构建特征往往过去具体，而且需要大量时间去设计和验证 学习特征自适应能力强，而且学习速度快 能处理监督以及无监督问题 使人们兴奋的最大原因是，it work！效果优于传统机器学习 大量训练数据 CPU/GPU硬件资源的提升 Why is NLP hard？ 人类语言充满歧义 人类语言非常简练，省略了大量背景知识，not saying many thing The Pope’s baby steps on gays Deep NLP = Deep Learning + NLP近年来的研究进展 Levels：语音、词汇、语法、语义 Tools：词性标注、命名实体识别、句法/语义分析 Applications：机器翻译、情感分析、客服系统、问答系统 语义 Semantics 传统：Lambda calculus，手写大量规则 DL：每个短语、句子、逻辑表述都是向量 情感分析 传统：构建情感极性词典 QA 传统：大量逻辑规则 机器翻译 传统：在许多层级上进行尝试，试图找到一种世界通用的”国际语“作为翻译桥梁 DL：以Vector为翻译桥梁]]></content>
@@ -124,8 +132,8 @@
         <category>读书笔记</category>
       </categories>
       <tags>
-        <tag>tensorflow</tag>
         <tag>machine learning</tag>
+        <tag>tensorflow</tag>
       </tags>
   </entry>
   <entry>
