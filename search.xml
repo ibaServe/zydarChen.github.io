@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SQL快速参考]]></title>
+    <url>%2F20180630%2Fquick_sql%2F</url>
+    <content type="text"><![CDATA[Structured Query Language，结构化查询语言 基础123SHOW DATABASES;USE database_name;SHOW COLUMNS FROM table_name; SELECT1234567891011121314151617SELECT column_name(s)FROM table_name;SELECT [DISTINCT] column_name(s)FROM table_nameWHERE column_name operator value[AND|OR column_name operator value]ORDER BY column_name(s) ASC|DESC[LIMIT number];SELECT column_name(s)FROM table_nameWHERE column_name IN (value1,value2,...);SELECT column_name(s)FROM table_nameWHERE column_name BETWEEN 'A' AND 'H'; LIKE1234567891011121314SELECT column_name(s)FROM table_nameWHERE column_name LIKE pattern;# pattern'%a' # 以a结尾的数据'a%' # 以a开头的数据'%a%' # 含有a的数据'_a_' # 三位且中间字母是a的'_a' # 两位且结尾字母是a的'a_' # 两位且开头字母是a的# REGEXPSELECT * FROM WebsitesWHERE name REGEXP '^[A-H]'; INSERT123456789101112INSERT INTO table_nameVALUES (value1, value2, ...);INSERT INTO table_name (column_name1, column_name2, ...)VALUES(value1, value2, ...);INSERT INTO table2(column_name(s))SELECT column_name(s)FROM table1; UPDATE123UPDATE table_nameSET column1=value1, column2=value2, ...WHERE some_column=some_value; DELECT12345678DELECT FROM table_nameWHERE some_column=some_value;DELECT * FROM table_name;TRUNCATE table_name;DROP table_name; JOIN1234SELECT column_name(s)FROMtable1 INNER|LEFT|RIGHT|FULL JOIN table2ON table1.column_name=table2.column_name;\ UNION123SELECT column_name(s) FROM table1UNION [ALL]SELECT column)name(s) FROM table2; CREATE TABLE123456789101112CREATE TABLE persons( PersonID int NOT NULL AUTO_INCREMENT, StudentID int, LastName varchar(255), FirstName varchar(255), Address varchar(255) DEFAULT 'GuangZhou', CHECK (PersonID&gt;0), UNIQUE (StudentID), PRIMARY KEY (PersonID), FOREIGN KEY (StudentID) REFERENCES student(StudentID) ); ALTER TABLE1234567891011ALTER TABLE personsADD|DROP UNIQUE (PersonID);ALTER TABLE personsDROP PRIMARY KEY;ALTER TABLE personsADD CHECK (PersonID&gt;0);ALTER TABLE personsALTER Address SET DEFAULT 'GuangZhou'; VIEW1234CREATE VIEW view_name ASSELECT column_name(s)FROM table_nameWHERE condition; 函数12345678SELECT AVG(column_name) FROM table_name;SELECT COUNT(column_name) FROM table_name;SELECT column_name, aggregate_function(column_name)FROM table_nameWHERE column_name operator valueGROUP BY column_name;]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[江南烟雨——杭州]]></title>
     <url>%2F20180623%2Fhangzhou2018%2F</url>
     <content type="text"><![CDATA[杭州游玩 交通 &amp; 行程交通 机场大巴滨江线 沿途站点：海外创业人才基地——华美达酒店——地铁江陵路站——杭州萧山国际机场 机场发车时间：08：20、09：20、10：00、10：50、11：20、12：50、14：00、15：00、16：20、17：50、 18：50、20：00 滨江发车时间：06：00、07：30、08：30、09：20、10：00、11：20、12：30、13：40、14：50、 16：00、 17：20、18：40 景点 灵隐寺 开放时间：每天7:00-18:15 灵隐寺在飞来峰内，飞来峰门票：￥45，灵隐寺门票：￥30 断桥残雪- 西湖音乐喷泉 时间：每天晚上七点、八点 行程 Day1 断桥残血(10分钟)—&gt;白堤(20分钟)—&gt;孤山(1-2小时)—&gt;曲院风荷(1小时)—&gt;苏堤春晓(30分钟)—&gt;花港观鱼(1小时)—&gt;吴山广场(1小时)—&gt;西湖音乐喷泉(10分钟) Day2 飞来峰(1小时)—&gt;灵隐寺(1-2小时)—&gt;浴鹄湾(1小时)—&gt;六和听涛/六合塔(1小时)—&gt;河坊街(1-2小时)]]></content>

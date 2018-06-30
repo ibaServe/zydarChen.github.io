@@ -117,7 +117,7 @@
 
 
 
-  <title>Debug Myself | 不好吃の蛋蛋</title>
+  <title>标签: SQL | 不好吃の蛋蛋</title>
   
 
 
@@ -173,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -296,293 +296,58 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>SQL<small>标签</small>
+        </h1>
+      </div>
 
-  
-  
-  
-
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zydarchen.github.io/20171023/debug/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zydarChen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不好吃の蛋蛋">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/20180630/quick_sql/" itemprop="url">
+              
+                <span itemprop="name">SQL快速参考</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">Debug Myself</h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-23T17:28:23+08:00">2017-10-23</time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程序员/" itemprop="url" rel="index"><span itemprop="name">程序员</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-            <div class="post-wordcount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">2k</span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>记录个人编程之路上遇到的问题以及解决方案</p>
-<a id="more"></a>
-<h2 id="Keras"><a href="#Keras" class="headerlink" title="Keras"></a>Keras</h2><ul>
-<li><p>【2017.10.26】ImportError: Failed to import pydot. You must install pydot and graphviz for <strong>pydotprint</strong> to work.<br>Keras的<a href="https://keras.io/visualization/" target="_blank" rel="noopener">Model visualization</a>可以很方便可视化网络</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Keras-2.0.8</span></span><br><span class="line"><span class="keyword">from</span> keras.utils <span class="keyword">import</span> plot_model</span><br><span class="line">plot_model(model, to_file=<span class="string">'model.png'</span>)</span><br></pre></td></tr></table></figure>
-<p>这个报错十分具有误导性…即使执行了pip install pydot；pip install pydot-ng；pip install graphviz还是有这个报错。<br>报错的原因其实不在于pydot，跟python包没有关系，而是因为graphviz需要安装二进制执行文件（跟imagick类似），所以还需要去<a href="http://www.graphviz.org/Download_windows.php" target="_blank" rel="noopener">官网</a>下一个graphviz安装包安装。双击运行之后一路next，最后将C:\Program Files (x86)\Graphviz2.38\bin加入系统环境变量。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pydot</span><br><span class="line">pip install pydot-ng  <span class="comment"># Keras 2.0.6之后只需安装pydot-ng</span></span><br></pre></td></tr></table></figure>
-<p>重启python即可</p>
-<ul>
-<li>参考1：<a href="http://blog.csdn.net/hahajinbu/article/details/72859849" target="_blank" rel="noopener">keras可视化遇到pydot&amp;graphviz无法导入问题</a></li>
-<li>参考2：<a href="https://stackoverflow.com/questions/36886711/keras-runtimeerror-failed-to-import-pydot-after-installing-graphviz-and-pyd" target="_blank" rel="noopener">stackoverflow</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h2><ul>
-<li><p>【2017.10.27】Windows安装tensorflow-gpu</p>
-<ul>
-<li>先安装<a href="https://developer.nvidia.com/compute/cuda/8.0/prod/local_installers/cuda_8.0.44_win10-exe" target="_blank" rel="noopener">cuda_8.0.44_win10-exe</a></li>
-<li>解压<a href="https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v6/prod/8.0_20170307/cudnn-8.0-windows10-x64-v6.0-zip" target="_blank" rel="noopener">cudnn-8.0-windows10-x64-v6.0.zip</a>，并将三个文件复制到C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0中的相应位置</li>
-<li>最后<code>pip install --ignore-installed --upgrade tensorflow-gpu</code>安装TensorFlow</li>
-<li><strong>直接在官网下的是cuda v9.0，目前tensorflow暂不支持！</strong></li>
-<li>参考：<a href="http://blog.csdn.net/lwplwf/article/details/54894364" target="_blank" rel="noopener">TensorFlow安装方法二【GPU环境配置部分】（Windows10 64位 cpu and gpu）</a></li>
-</ul>
-</li>
-<li><p>【2017.12.13】ImportError: libcublas.so.8.0: cannot open shared object file: No such file or directory</p>
-<ul>
-<li>问题出在不能正确找到CUDA</li>
-<li><p>在CUDA已经安装的前提下，在<code>.bashrc</code>文件中增加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="built_in">local</span>/cuda/lib64/</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果需要在Pycharm中进行远程，则在run configuration中增加cuda lib的环境变量<br><img src="/image/other/run_config.png" alt=""></p>
-</li>
-</ul>
-</li>
-<li><p>【2018.05.11】升级Tensorflow</p>
-<ul>
-<li>tensorflow升级到1.8之后，cuda需要升级到9.0</li>
-<li>下载<a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Windows&amp;target_arch=x86_64&amp;target_version=10&amp;target_type=exelocal" target="_blank" rel="noopener">cuda_9.0.176_win10.exe</a>以及<a href="https://developer.nvidia.com/rdp/cudnn-download" target="_blank" rel="noopener">cudnn-9.0-windows10-x64-v7.1.zip</a></li>
-<li><strong>自定义</strong>安装cuda_9.0.176_win10.exe，只安装CUDA</li>
-<li>解压cudnn-9.0-windows10-x64-v7.1.zip，并将三个文件复制到C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0中的相应位置</li>
-<li>在系统环境变量中删除之前版本的CUDA</li>
-<li><code>nvcc -V</code>验证版本</li>
-<li>目前tensorflow最新版本1.8.0只支持到CUDA9.0，如果想使用CUDA9.1，可以使用大神预编译好的版本，<a href="https://github.com/fo40225/tensorflow-windows-wheel" target="_blank" rel="noopener">GitHUB地址</a>。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ul>
-<li>【2017.11.22】.gitignore文件<ul>
-<li>data: 匹配根目录以及所有子目录中名字为“data”的文件或者文件夹</li>
-<li>data/: 匹配根目录以及所有子目录中名字为“data”的文件夹</li>
-<li>data/*: 匹配根目录中名字为“data”的文件夹</li>
-<li>*/data/*: 匹配所有子目录中名字为“data”的文件夹</li>
-</ul>
-</li>
-</ul>
-<h2 id="Pycharm"><a href="#Pycharm" class="headerlink" title="Pycharm"></a>Pycharm</h2><ul>
-<li><p>【2017.12.13】matplotlib显示远程服务器上图片<br><a href="http://www.dataguru.cn/article-10882-1.html" target="_blank" rel="noopener">从零开始：使用PyCharm和SSH搭建远程TensorFlow开发环境</a><br><a href="https://stackoverflow.com/questions/39803373/python-plotting-on-remote-server-using-pycharm" target="_blank" rel="noopener">Python plotting on remote server using PyCharm</a><br><a href="http://blog.csdn.net/zzzzzqf/article/details/70833259" target="_blank" rel="noopener">Pycharm远程调用Centos GUI程序,显示在windows上</a><br><a href="http://www.dengfeilong.com/matplotlib/285.html" target="_blank" rel="noopener">matplotlib绘图错误：TclError: no display name and no $DISPLA</a></p>
-<p>emmmm，进入正题，我误打误撞的解决方案。MobaXterm + pycharm</p>
-<ul>
-<li>使用MobaXterm登陆服务器</li>
-<li><code>echo $DISPLAY</code>查看MobaXterm转发显示的number，如<code>localhost:10.0</code></li>
-<li>在pycharm的run configuration中增加DISPLAY的环境变量<br><img src="/image/other/run_config_display.png" alt=""></li>
-</ul>
-</li>
-</ul>
-<h2 id="XGBOOST"><a href="#XGBOOST" class="headerlink" title="XGBOOST"></a>XGBOOST</h2><p>​    【2018.05.15】Ubuntu<code>pip install xgboost</code>（有毒）</p>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>Buy me a cup of coffee</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="zydarChen 微信支付"/>
-        <p>微信支付</p>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-30T11:50:30+08:00"
+              content="2018-06-30" >
+          06-30
+        </time>
       </div>
-    
 
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="zydarChen 支付宝"/>
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/20171008/django-demo/" rel="next" title="简单的信息统计页面Demo">
-                <i class="fa fa-chevron-left"></i> 简单的信息统计页面Demo
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/20171221/Styles-of-Truncated-Backpropagation/" rel="prev" title="【译】不同的截断反向传播">
-                【译】不同的截断反向传播 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTk1Mi82NTE3"></div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -603,17 +368,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -695,22 +451,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Keras"><span class="nav-number">1.</span> <span class="nav-text">Keras</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow"><span class="nav-number">2.</span> <span class="nav-text">TensorFlow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">3.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pycharm"><span class="nav-number">4.</span> <span class="nav-text">Pycharm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XGBOOST"><span class="nav-number">5.</span> <span class="nav-text">XGBOOST</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -864,10 +604,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.1"></script>
-
-
 
   
 
@@ -892,17 +628,6 @@
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 
