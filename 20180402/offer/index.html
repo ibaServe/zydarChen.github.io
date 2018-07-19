@@ -376,7 +376,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">744</span>
+                <span title="字数统计">2k</span>
               
 
               
@@ -442,6 +442,76 @@
 <li>基尼系数$Gini(p) = -\sum _{k=1}^Kp_k(1-p<em>k) = 1 - \sum </em>{k=1}^Kp_k^2$</li>
 <li>熵：随机变量的不确定性的度量$H(X) = -\sum _{i=1}^np_ilogp_i$</li>
 <li>信息增益：g(D,A) = H(D) - H(D|A)，H(D)表示对数据集D进行分类的不确定性；H(D|A)表示特征A给定的条件下对数据集D分类的不确定性；信息增益则表示，由于特征A而使得数据集D的分类不确定性减少的程度</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">ID3、C4.5、CART</div></div><div class="fold">
+<ul>
+<li>ID3：基于信息增益的大小来逐层确定分类特征，偏向于选择取值多的特征</li>
+<li>C4.5：先从候选特征中找出信息增益高于平均水平的特征，再从中选择信息增益比最高的</li>
+<li>CART：分类树用基尼系数最小化，回归树用平方误差最小化</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">ID3的具体过程</div></div><div class="fold">
+<ul>
+<li>从跟节点开始，对节点计算所有可能的特征信息增益</li>
+<li>选择信息增益最大的特征作为节点的特征，由该特征的不同取值建立子节点</li>
+<li>再对子节点递归地调用以上方法，构建决策树</li>
+<li>直到所有特征的信息增益均很小或没有特征可以选择为止</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">决策树怎么剪枝</div></div><div class="fold">
+<ul>
+<li>极小化决策树整体损失函数</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">决策树的优缺点</div></div><div class="fold">
+<ul>
+<li>树形，非线性，简单，易于理解</li>
+<li>能处理数据确实问题</li>
+<li>能处理多分类问题</li>
+<li>能同时处理连续型变量与离散型变量</li>
+<li>缺点：容易过拟合，启发式</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">CART特点、剪枝、对缺失值的处理</div></div><div class="fold">
+<ul>
+<li>每个节点采用二叉分裂，分裂准则采用基尼系数或者平方误差最小</li>
+<li>剪枝：从生成算法产生的决策树底端开始不断剪枝，直到根节点，形成一个T0, T1, …, Tn的子序列</li>
+<li>缺失值：训练的过程中保存替代特征，对于缺失数据，用替代特征进行划分</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">C4.5对缺失值的处理</div></div><div class="fold">
+<ul>
+<li>划分点选择：未缺失样本的信息增益乘以为缺失样本的占比</li>
+<li>怎么划分：让同一样本以不同的概率划入到不同的子节点中</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">分类与回归树的区别</div></div><div class="fold">
+<ul>
+<li>分类树使用信息增益/信息增益比/基尼系数进行划分节点</li>
+<li>回归树使用均方误差来划分节点</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">预剪枝与后剪枝</div></div><div class="fold">
+<ul>
+<li>预剪枝：在决策树生成过程中，对每个节点在划分前先进行估计，若当前结点的划分不能带来决策树泛化性能提升，则停止划分并将当前节点标记为叶节点</li>
+<li>先从训练集生成一颗完整的决策树，然后从底向上地对非叶节点进行考察，若将该节点对应地子树替换为叶节点能带来决策树泛化性能提升，则将该子树替换为叶节点</li>
 </ul>
 
 </div></div>
@@ -730,7 +800,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">91k</span>
+    <span title="站点总字数">92k</span>
   
 
   
