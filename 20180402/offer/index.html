@@ -376,7 +376,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">2k</span>
+                <span title="字数统计">3k</span>
               
 
               
@@ -518,21 +518,115 @@
 </li>
 </ol>
 <h1 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h1><ol>
-<li>什么是随机森林</li>
-<li>随机森林的优点</li>
-<li>Out-Of-Bag(OOB)怎么自我验证</li>
-<li>特征重要度衡量</li>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是随机森林</div></div><div class="fold">
+<ul>
+<li>随机森林是以决策树为基学习器构建Bagging集成</li>
+<li>进一步在决策树的训练过程中引入了随机特征组合</li>
+<li>具体地说，就是在决策树每次进行最优划分特征选择时，不考虑所有的特征，而只考虑随机的特征子空间或者随机特征组合</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">随机森林的优点</div></div><div class="fold">
+<ul>
+<li>高效并行训练</li>
+<li>决策树的所有优点</li>
+<li>降低了过拟合的可能</li>
+<li>可用评估特征的重要性，做特征选择</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">怎么自我验证</div></div><div class="fold">
+<ul>
+<li>随机森林采用了bagging的方式，每次训练大约有1/3的数据可以用于做验证</li>
+<li>对于每个样本xn，都有部分子决策树没有使用该样本进行训练，我们将这些子树拿出来就组成了$G_n^− (x_n)$，再求一下误差值，最终将所有的$G_n^− (x_n)$综合起来</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">特征重要度衡量</div></div><div class="fold">
+<ul>
+<li>将OOB的特征值进行重排，对模型效果影响是否显著</li>
+</ul>
+
+</div></div>
+</li>
 </ol>
 <h1 id="集成学习"><a href="#集成学习" class="headerlink" title="集成学习"></a>集成学习</h1><ol>
-<li>什么是Ensemble Learning</li>
-<li>什么是Boosting</li>
-<li>什么是AdaBoost</li>
-<li>什么是Gradient Boosting</li>
-<li>什么是Bagging</li>
-<li>什么是XGBoost</li>
-<li>GBDT与提升树的区别</li>
-<li>GBDT如何转换为分类问题</li>
-<li>XGBoost与GBDT的区别-5</li>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是集成学习</div></div><div class="fold">
+<p>对于一个复杂的任务来说，将多个专家的判断进行适当的综合所得出的判断，要比其中任何一个专家单独的判断好</p>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是Boosting</div></div><div class="fold">
+<ul>
+<li>Boosting就是从弱学习算法出发，反复学习，得到一系列弱学习器，然后组合这些弱学习器得到一个强学习器</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是AdaBoost</div></div><div class="fold">
+<ul>
+<li>先从初始训练集训练出一个基学习器，在根据基学习器的表现对训练样本分布进行调整，使得之前错的训练样本在后续受到更多关注，也就是提高那些被前一轮分类器错误分类样本的权值，而降低那些被正确分类样本的权值</li>
+<li>最终采用加权多数表决进行综合</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是Gradient_Boosting</div></div><div class="fold">
+<ul>
+<li>通过迭代拟合损失函数的负梯度值，让损失函数持续下降</li>
+<li>每次迭代先求得关于累加函数F(x)的负梯度(- gradient)，然后通过弱学习器f(x)去拟合该负梯度，然后将弱学习器f累加到F得到新的F</li>
+<li>当损失函数是平方损失时，该负梯度值也就是残差，模型退化为回归提升模型</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是Bagging</div></div><div class="fold">
+<ul>
+<li>基于bootstrap sampling：从m样本中，有放回地取出m个样本</li>
+<li>构建多个学习器，并集成</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是XGBoost</div></div><div class="fold">
+<ul>
+<li>一个GBDT大规模并行开源框架</li>
+<li>GBDT是一种Boosting</li>
+<li>Boosting是…</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">GBDT与提升树的区别</div></div><div class="fold">
+<ul>
+<li>提升树拟合的是残差，损失函数是均方误差；GBDT拟合的是负梯度值</li>
+<li>GBDT中引入了学习率</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">GBDT如何转换为分类问题</div></div><div class="fold">
+<ul>
+<li>二分类：比较最终的概率大小，区分属于正类还是负类</li>
+<li>多分类：生成k棵回归数，每棵树的叶节点表示某一类样本的得分，样本最终对各类的概率由softmax对每个得分归一化处理得到</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">XGBoost与GBDT的区别</div></div><div class="fold">
+<ul>
+<li>传统的GBDT以CART树为<strong>基学习器</strong>，XGBOOST还支持线性分类器，这时候的XGBOOST就相当于加了正则项的逻辑回归或者线性回归</li>
+<li>XGBOOST在代价函数中加入了<strong>正则项</strong>，用于控制模型的复杂度；L1可以控制叶节点的个数，L2可以控制叶节点上的样本数目</li>
+<li>传统GBDT在优化的时候只用到了一阶导数，XGBOOST则对代价函数进行<strong>二阶泰勒展开</strong>，同时利用一阶和二阶导信息计算</li>
+<li><strong>列抽样</strong>：XGBOOST借鉴了随机森林的做法，对特征抽样再拟合，不仅防止过拟合，还能减少计算</li>
+<li><strong>并行结算</strong>：XGBOOST在特征粒度上开多个线程同时计算它们各自的最佳信息增益</li>
+</ul>
+
+</div></div>
+</li>
 </ol>
 <h1 id="ARIMA"><a href="#ARIMA" class="headerlink" title="ARIMA"></a>ARIMA</h1><ol>
 <li>什么是ARIMA模型</li>
@@ -800,7 +894,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">92k</span>
+    <span title="站点总字数">93k</span>
   
 
   
