@@ -44,7 +44,7 @@
   <entry>
     <title><![CDATA[机器学习面试要点记录]]></title>
     <url>%2F20180402%2Foffer%2F</url>
-    <content type="text"><![CDATA[决策树 随机森林 Ensemble Learning ARIMA 决策树 什么是决策树 决策树是一种树形结构学习器 从根节点开始，对实例的某一特征进行测试，根据测试结果，将实例分配到其子节点 如此递归地对实例进行测试并分配，直到达到叶节点 由决策树的根节点到叶节点的每一条路径就构建除了一条规则 决策树学习本质上是从训练集中归纳出一组分类规则 随机森林 什么是随机森林 随机森林的优点 Out-Of-Bag(OOB)怎么自我验证 特征重要度衡量 集成学习 什么是Ensemble Learning 什么是Boosting 什么是AdaBoost 什么是Gradient Boosting 什么是Bagging 什么是XGBoost GBDT与提升树的区别 GBDT如何转换为分类问题 XGBoost与GBDT的区别-5 ARIMA 什么是ARIMA模型 稳定的标准 平稳的定义 平稳的序列通常具有短期相关性 如何判断是否平稳]]></content>
+    <content type="text"><![CDATA[决策树 随机森林 Ensemble Learning ARIMA 决策树 什么是决策树 决策树是一种树形结构学习器 从根节点开始，对实例的某一特征进行测试，根据测试结果，将实例分配到其子节点 如此递归地对实例进行测试并分配，直到达到叶节点 由决策树的根节点到叶节点的每一条路径就构建除了一条规则 决策树学习本质上是从训练集中归纳出一组分类规则 决策树的三个步骤 特征选择 决策树的生成 决策树的修剪 决策树终止条件 节点样本集合为空 节点样本属于同一类别 节点属性集合为空 熵、条件熵、信息增益、基尼系数 基尼系数$Gini(p) = -\sum _{k=1}^Kp_k(1-pk) = 1 - \sum {k=1}^Kp_k^2$ 熵：随机变量的不确定性的度量$H(X) = -\sum _{i=1}^np_ilogp_i$ 信息增益：g(D,A) = H(D) - H(D|A)，H(D)表示对数据集D进行分类的不确定性；H(D|A)表示特征A给定的条件下对数据集D分类的不确定性；信息增益则表示，由于特征A而使得数据集D的分类不确定性减少的程度 随机森林 什么是随机森林 随机森林的优点 Out-Of-Bag(OOB)怎么自我验证 特征重要度衡量 集成学习 什么是Ensemble Learning 什么是Boosting 什么是AdaBoost 什么是Gradient Boosting 什么是Bagging 什么是XGBoost GBDT与提升树的区别 GBDT如何转换为分类问题 XGBoost与GBDT的区别-5 ARIMA 什么是ARIMA模型 稳定的标准 平稳的定义 平稳的序列通常具有短期相关性 如何判断是否平稳]]></content>
       <tags>
         <tag>面经</tag>
       </tags>
