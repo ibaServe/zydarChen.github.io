@@ -117,7 +117,7 @@
 
 
 
-  <title>【Fight for Offer】知识要点 | 不好吃の蛋蛋</title>
+  <title>机器学习面试要点记录 | 不好吃の蛋蛋</title>
   
 
 
@@ -329,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【Fight for Offer】知识要点</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习面试要点记录</h1>
         
 
         <div class="post-meta">
@@ -376,7 +376,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">79</span>
+                <span title="字数统计">900</span>
               
 
               
@@ -400,20 +400,97 @@
       
 
       
-        <p>个人计算机基础知识梳理</p>
+        <ul>
+<li>决策树<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+
+</div></div></li>
+<li>随机森林</li>
+<li>Ensemble Learning</li>
+<li>ARIMA</li>
+</ul>
 <a id="more"></a>
-<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><ul>
-<li>UDP与TCP的区别<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+<h1 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h1><ol>
+<li>什么是决策树<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+<p>决策树是一种树形结构学习器<br>从根节点开始，对实例的某一特征进行测试，根据测试结果，将实例分配到其子节点<br>如此递归地对实例进行测试并分配，直到达到叶节点<br>由决策树的根节点到叶节点的每一条路径就构建除了一条规则<br>决策树学习本质上是从训练集中归纳出一组分类规则</p>
+
+</div></div></li>
+<li>决策树的三个步骤<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+<p>a. 决策树是一种树形结构学习器<br>b. 从根节点开始，对实例的某一特征进行测试，根据测试结果，将实例分配到其子节点<br>c. 如此递归地对实例进行测试并分配，直到达到叶节点<br>d. 由决策树的根节点到叶节点的每一条路径就构建除了一条规则</p>
+<ul>
+<li>决策树学习本质上是从训练集中归纳出一组分类规则</li>
+</ul>
+
+</div></div></li>
+<li>决策树终止条件<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+<ul>
+<li>由决策树的根节点到叶节点的每一条路径就构建除了一条规则</li>
+<li>决策树学习本质上是从训练集中归纳出一组分类规则</li>
+</ul>
+
+</div></div></li>
+<li>熵、条件熵、信息增益<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
 <p>TODO</p>
 
 </div></div></li>
-<li>TCP的三次握手<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+<li>ID3、C4.5、CART<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+<p>TODO</p>
+
+</div></div></li>
+<li>ID3的具体过程<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+<p>TODO</p>
+
+</div></div></li>
+<li>决策树怎么剪枝<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+<p>TODO</p>
+
+</div></div></li>
+<li>决策树的优缺点<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+<p>TODO</p>
+
+</div></div></li>
+<li>CART特点、剪枝、对缺失值的处理<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+<p>TODO</p>
+
+</div></div></li>
+<li>C4.5对缺失值的处理<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+<p>TODO</p>
+
+</div></div></li>
+<li>分类与回归树的区别<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
+<p>TODO</p>
+
+</div></div></li>
+<li>预剪枝与后剪枝<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
 <p>TODO</p>
 
 </div></div>
 </li>
-</ul>
-<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1>
+</ol>
+<h1 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h1><ol>
+<li>什么是随机森林</li>
+<li>随机森林的优点</li>
+<li>Out-Of-Bag(OOB)怎么自我验证</li>
+<li>特征重要度衡量</li>
+</ol>
+<h1 id="集成学习"><a href="#集成学习" class="headerlink" title="集成学习"></a>集成学习</h1><ol>
+<li>什么是Ensemble Learning</li>
+<li>什么是Boosting</li>
+<li>什么是AdaBoost</li>
+<li>什么是Gradient Boosting</li>
+<li>什么是Bagging</li>
+<li>什么是XGBoost</li>
+<li>GBDT与提升树的区别</li>
+<li>GBDT如何转换为分类问题</li>
+<li>XGBoost与GBDT的区别-5</li>
+</ol>
+<h1 id="ARIMA"><a href="#ARIMA" class="headerlink" title="ARIMA"></a>ARIMA</h1><ol>
+<li>什么是ARIMA模型</li>
+<li>稳定的标准</li>
+<li>平稳的定义</li>
+<li>平稳的序列通常具有短期相关性</li>
+<li>如何判断是否平稳</li>
+</ol>
+
       
     </div>
     
@@ -640,7 +717,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机网络"><span class="nav-number">1.1.</span> <span class="nav-text">计算机网络</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习"><span class="nav-number">2.</span> <span class="nav-text">机器学习</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树"><span class="nav-number">1.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机森林"><span class="nav-number">2.</span> <span class="nav-text">随机森林</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成学习"><span class="nav-number">3.</span> <span class="nav-text">集成学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARIMA"><span class="nav-number">4.</span> <span class="nav-text">ARIMA</span></a></li></ol></div>
             
 
           </div>
@@ -672,7 +749,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">91k</span>
+    <span title="站点总字数">92k</span>
   
 
   
