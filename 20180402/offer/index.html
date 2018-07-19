@@ -376,7 +376,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">773</span>
+                <span title="字数统计">880</span>
               
 
               
@@ -429,11 +429,19 @@
 </div></div>
 </li>
 <li><div><div class="fold_hider"><div class="close hider_title">决策树终止条件</div></div><div class="fold">
-<p>a. 当前节点所包含的样本全属于同一类别<br>b. 当前属性集为空，或是所有样本在所有属性上取值相同，无法划分<br>当前节点包含的样本集合为空，不能划分</p>
+<ul>
+<li>节点样本集合为空</li>
+<li>节点样本属于同一类别</li>
+<li>节点属性集合为空</li>
+</ul>
 
-</div></div></li>
-<li>熵、条件熵、信息增益<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
-<p>TODO</p>
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">熵、条件熵、信息增益</div></div><div class="fold">
+<ul>
+<li>熵：随机变量的不确定性的度量H(X) = -\sum _{i=1}^np_ilogp_i</li>
+<li>信息增益：g(D,A) = H(D) - H(D|A)，H(D)表示对数据集D进行分类的不确定性；H(D|A)表示特征A给定的条件下对数据集D分类的不确定性；信息增益则表示，由于特征A而使得数据集D的分类不确定性减少的程度</li>
+</ul>
 
 </div></div></li>
 <li>ID3、C4.5、CART<div><div class="fold_hider"><div class="close hider_title">---答案---</div></div><div class="fold">
@@ -753,7 +761,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">91k</span>
+    <span title="站点总字数">92k</span>
   
 
   
