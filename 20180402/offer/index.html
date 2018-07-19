@@ -117,7 +117,7 @@
 
 
 
-  <title>机器学习面试要点记录 | 不好吃の蛋蛋</title>
+  <title>机器学习知识要点记录 | 不好吃の蛋蛋</title>
   
 
 
@@ -329,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习面试要点记录</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习知识要点记录</h1>
         
 
         <div class="post-meta">
@@ -401,12 +401,82 @@
 
       
         <ul>
+<li>机器学习基本概念</li>
+<li>LR</li>
+<li>SVM</li>
+<li>K-Means</li>
 <li>决策树</li>
 <li>随机森林</li>
 <li>Ensemble Learning</li>
 <li>ARIMA</li>
+<li>梯度下降</li>
+<li>LSTM</li>
+<li>CNN</li>
+<li>NLP</li>
 </ul>
 <a id="more"></a>
+<h1 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h1><ol>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是K-Means</div></div><div class="fold">
+<ul>
+<li>K-Means是一种聚类算法，基本思想是对于给定的类别数目k，首先给出初始划分，通过迭代改变样本和簇的隶属关系，使得每一次改变后的划分方案都比前一次好</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">K-Means具体做法</div></div><div class="fold">
+<ul>
+<li>选择初始的k个类别中心</li>
+<li>将每个样本标记为最近的类别</li>
+<li>更新类别中心，将类别中心更新为该类别中所有样本的均值</li>
+<li>重复前面两步，直到类别中心的变化小于某阈值或者迭代一定轮数</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">K-Means的优缺点</div></div><div class="fold">
+<ul>
+<li>简单、快速</li>
+<li>对高斯分布的数据集，效果较好</li>
+<li>K需要预先定义</li>
+<li>均值不可计算时无法使用</li>
+<li>初值敏感</li>
+<li>不适用于发现非凸或者大小差别很大的簇</li>
+<li>对噪声和孤立点敏感</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">K值的确定</div></div><div class="fold">
+<ul>
+<li>经验</li>
+<li>又放回抽样，对不同的K值做两次聚类，计算相似性</li>
+<li>计算平均轮廓系数</li>
+<li>对不同的K值计算平方误差和（SSE），随着K的增大，SSE是肯定会降低的，找到那个开始降低不明显的点</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">初始化聚类中心</div></div><div class="fold">
+<ul>
+<li>K-Means++</li>
+<li>先计算整体样本中心，然后从中心点出发，由近至远均匀采样</li>
+<li>划分区域，区域中心未聚类中心</li>
+<li>先用层次聚类初始聚类，再进行K-Means</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">K-Means++算法</div></div><div class="fold">
+<ul>
+<li>随机选取第一个聚类中心</li>
+<li>计算每个点到最近聚类中心的距离D(x)</li>
+<li>选择D(x)最大的点作为下一个聚类中心</li>
+<li>重复上面步骤，直到得到k个聚类中心</li>
+</ul>
+
+</div></div>
+</li>
+</ol>
 <h1 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h1><ol>
 <li><div><div class="fold_hider"><div class="close hider_title">什么是决策树</div></div><div class="fold">
 <ul>
@@ -439,7 +509,7 @@
 </li>
 <li><div><div class="fold_hider"><div class="close hider_title">熵、条件熵、信息增益、基尼系数</div></div><div class="fold">
 <ul>
-<li>基尼系数$Gini(p) = -\sum _{k=1}^Kp_k(1-p<em>k) = 1 - \sum </em>{k=1}^Kp_k^2$</li>
+<li>基尼系数$Gini(p) = - \sum _{k=1}^Kp_k(1-p_k) = 1 - \sum ^Kp_k^2$</li>
 <li>熵：随机变量的不确定性的度量$H(X) = -\sum _{i=1}^np_ilogp_i$</li>
 <li>信息增益：g(D,A) = H(D) - H(D|A)，H(D)表示对数据集D进行分类的不确定性；H(D|A)表示特征A给定的条件下对数据集D分类的不确定性；信息增益则表示，由于特征A而使得数据集D的分类不确定性减少的程度</li>
 </ul>
@@ -555,7 +625,9 @@
 </ol>
 <h1 id="集成学习"><a href="#集成学习" class="headerlink" title="集成学习"></a>集成学习</h1><ol>
 <li><div><div class="fold_hider"><div class="close hider_title">什么是集成学习</div></div><div class="fold">
-<p>对于一个复杂的任务来说，将多个专家的判断进行适当的综合所得出的判断，要比其中任何一个专家单独的判断好</p>
+<ul>
+<li>对于一个复杂的任务来说，将多个专家的判断进行适当的综合所得出的判断，要比其中任何一个专家单独的判断好</li>
+</ul>
 
 </div></div>
 </li>
@@ -681,7 +753,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/面经/" rel="tag"># 面经</a>
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
         </div>
       
@@ -807,7 +879,7 @@
                 
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -862,7 +934,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树"><span class="nav-number">1.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机森林"><span class="nav-number">2.</span> <span class="nav-text">随机森林</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成学习"><span class="nav-number">3.</span> <span class="nav-text">集成学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARIMA"><span class="nav-number">4.</span> <span class="nav-text">ARIMA</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#K-Means"><span class="nav-number">1.</span> <span class="nav-text">K-Means</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树"><span class="nav-number">2.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机森林"><span class="nav-number">3.</span> <span class="nav-text">随机森林</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成学习"><span class="nav-number">4.</span> <span class="nav-text">集成学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARIMA"><span class="nav-number">5.</span> <span class="nav-text">ARIMA</span></a></li></ol></div>
             
 
           </div>
@@ -894,7 +966,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">93k</span>
+    <span title="站点总字数">94k</span>
   
 
   
