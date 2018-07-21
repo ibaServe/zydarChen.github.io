@@ -376,7 +376,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">7k</span>
+                <span title="字数统计">8k</span>
               
 
               
@@ -667,29 +667,37 @@
 </li>
 <li><div><div class="fold_hider"><div class="close hider_title">为什么RBF能映射到无穷维</div></div><div class="fold">
 <ul>
-<li>泰勒展开</li>
-<li><img src="./image/offer/Taylor.png" alt="Taylor"></li>
+<li>泰勒展开<br><img src="/image/offer/Taylor.png" alt="Taylor"></li>
 </ul>
 
 </div></div>
 </li>
-<li><div><div class="fold_hider"><div class="close hider_title">为什么RBF能映射到无穷维</div></div><div class="fold">
+<li><div><div class="fold_hider"><div class="close hider_title">核函数的优缺点</div></div><div class="fold">
 <ul>
-<li>TODU</li>
+<li>线性核函数<ul>
+<li>优点：最简单，计算速度最快，更可解释</li>
+<li>缺点：需要线性可分或近似线性可分</li>
+</ul>
+</li>
+<li>多项式核函数<ul>
+<li>优点：比线性核函数的限制少，当我们对实际问题有一定了解时，可能很好地认为限定Q</li>
+<li>缺点：Q较大时，计算困难，可能导致核函数趋近于0或者无穷大；参数选择较多，有三个</li>
+</ul>
+</li>
+<li>高斯核函数<ul>
+<li>优点：能映射到无穷维，因此可以拟合复杂的非线性问题；高斯函数数值上在0-1之间，更好计算；参数更好调节</li>
+<li>缺点：可解释性差；计算速度慢；过拟合</li>
+</ul>
+</li>
 </ul>
 
 </div></div>
 </li>
-<li><div><div class="fold_hider"><div class="close hider_title">为什么RBF能映射到无穷维</div></div><div class="fold">
+<li><div><div class="fold_hider"><div class="close hider_title">食用技巧</div></div><div class="fold">
 <ul>
-<li>TODU</li>
-</ul>
-
-</div></div>
-</li>
-<li><div><div class="fold_hider"><div class="close hider_title">为什么RBF能映射到无穷维</div></div><div class="fold">
-<ul>
-<li>TODU</li>
+<li>特征数m远大于样本数n，LR或线性核函数SVM</li>
+<li>特征数m小于样本数n，高斯核函数SVM</li>
+<li>样本数n非常大，此时高斯核函数SVM速度会很慢，因该引入更多特征</li>
 </ul>
 
 </div></div>
@@ -981,11 +989,115 @@
 </li>
 </ol>
 <h1 id="ARIMA"><a href="#ARIMA" class="headerlink" title="ARIMA"></a>ARIMA</h1><ol>
-<li>什么是ARIMA模型</li>
-<li>稳定的标准</li>
-<li>平稳的定义</li>
-<li>平稳的序列通常具有短期相关性</li>
-<li>如何判断是否平稳</li>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是ARIMA模型</div></div><div class="fold">
+<ul>
+<li>AR是使用当前观察点以及若干延迟时期观察点的依赖关系进行建模</li>
+<li>MA是使用当前观察点以及若干延迟时期观察点在移动平均模型上的残差的依赖关系进行建模</li>
+<li>I表示对数据地差分，使得不平稳地序列变得平稳</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">稳定的标准</div></div><div class="fold">
+<ul>
+<li>恒定的平均数</li>
+<li>恒定地方差</li>
+<li>不随时间变化地自协方差</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">平稳的定义</div></div><div class="fold">
+<ul>
+<li>常数均值</li>
+<li>自协方差与自相关系数<strong>只依赖于</strong>时间地平移长度而与时间地起止点无关</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">平稳的序列通常具有短期相关性</div></div><div class="fold">
+<ul>
+<li>用自相关系数来描述就是随着延迟期k的增加，平稳序列的自相关系数会很快衰减向零</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">如何判断是否平稳</div></div><div class="fold">
+<ul>
+<li>在自相关图（PAC）上，随着延迟期数k的增加，自相关系数很快衰减向零，且之后始终控制在2倍标准差范围内</li>
+<li>为什么引入2倍标准差呢？由于样本的随机性，很难确定是否真正截尾（最初的d阶明显超过2倍标准差范围，而后几乎95%的（偏）自相关系数都落在2倍标准差范围以内，则d阶截尾）</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">ARIMA建模的一般过程</div></div><div class="fold">
+<ul>
+<li>平稳性检验（DF检验）</li>
+<li>白噪声检验</li>
+<li>定阶<ul>
+<li>偏自相关系数定p</li>
+<li>自相关系数定q</li>
+</ul>
+</li>
+<li>参数估计</li>
+<li>模型验证<ul>
+<li>模型的显著性检验：残差为白噪声，好的拟合模型能够提取观测序列中几乎所有样本的相关信息</li>
+<li>参数的显著性检验：每一个未知参数显著非零</li>
+</ul>
+</li>
+<li>模型优化，AIC、SBS越小越好</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">自协方差&自相关系数</div></div><div class="fold">
+<ul>
+<li>方差$\sigma _t^2=D(X_t)=E(X_t-\mu _t)^2$</li>
+<li>自协方差$\gamma (t,s)=E(X_t-\mu _t)E(X_s-\mu _s)$</li>
+<li>自相关系数$ACF=\frac{\gamma (t,s)}{\sqrt{D(X_t)D(X_s)}}$</li>
+</ul>
+
+</div></div>
+</li>
+</ol>
+<h1 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h1><ol>
+<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
+<p>- </p>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
+<p>- </p>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
+<p>- </p>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
+<p>- </p>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
+<p>- </p>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
+<p>- </p>
+
+</div></div>
+<h1 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h1></li>
+</ol>
+<h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><h1 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h1><ol>
+<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
+<p>- </p>
+
+</div></div>
+</li>
 </ol>
 
       
@@ -1214,7 +1326,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习基本概念"><span class="nav-number">1.</span> <span class="nav-text">机器学习基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LR"><span class="nav-number">2.</span> <span class="nav-text">LR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM"><span class="nav-number">3.</span> <span class="nav-text">SVM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#K-Means"><span class="nav-number">4.</span> <span class="nav-text">K-Means</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树"><span class="nav-number">5.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机森林"><span class="nav-number">6.</span> <span class="nav-text">随机森林</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成学习"><span class="nav-number">7.</span> <span class="nav-text">集成学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARIMA"><span class="nav-number">8.</span> <span class="nav-text">ARIMA</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习基本概念"><span class="nav-number">1.</span> <span class="nav-text">机器学习基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LR"><span class="nav-number">2.</span> <span class="nav-text">LR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM"><span class="nav-number">3.</span> <span class="nav-text">SVM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#K-Means"><span class="nav-number">4.</span> <span class="nav-text">K-Means</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树"><span class="nav-number">5.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机森林"><span class="nav-number">6.</span> <span class="nav-text">随机森林</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成学习"><span class="nav-number">7.</span> <span class="nav-text">集成学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARIMA"><span class="nav-number">8.</span> <span class="nav-text">ARIMA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#梯度下降"><span class="nav-number">9.</span> <span class="nav-text">梯度下降</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LSTM"><span class="nav-number">10.</span> <span class="nav-text">LSTM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CNN"><span class="nav-number">11.</span> <span class="nav-text">CNN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NLP"><span class="nav-number">12.</span> <span class="nav-text">NLP</span></a></li></ol></div>
             
 
           </div>
@@ -1246,7 +1358,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">98k</span>
+    <span title="站点总字数">99k</span>
   
 
   
