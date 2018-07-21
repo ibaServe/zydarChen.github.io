@@ -376,7 +376,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">6k</span>
+                <span title="字数统计">7k</span>
               
 
               
@@ -568,6 +568,126 @@
 </div></div>
 </li>
 <li><div><div class="fold_hider"><div class="close hider_title">L1与L2的区别</div></div><div class="fold">
+<ul>
+<li>TODU</li>
+</ul>
+
+</div></div>
+</li>
+</ol>
+<h1 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h1><ol>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是SVM</div></div><div class="fold">
+<ul>
+<li>支持向量机是一种二分类模型，它的基本思路是在特征空间中寻找<strong>间隔最大化</strong>的分割超平面</li>
+<li>线性可分支持向量机：训练样本线性可分，硬间隔最大化</li>
+<li>线性支持向量机：训练样本近似线性可分，软间隔最大化</li>
+<li>非线性支持向量机：训练样本线性不可分，软间隔最大化+核技巧</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">为什么采用间隔最大化</div></div><div class="fold">
+<ul>
+<li>当训练样本线性可分时，存在无穷多个分割超平面</li>
+<li>利用间隔最大化可以找到最优的超平面，此时，解是唯一的，对未知样本的泛化能力也是最强的</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是间隔</div></div><div class="fold">
+<ul>
+<li>间隔分为函数间隔与几何间隔</li>
+<li>函数间隔与几何间隔的关系是，几何间隔=函数间隔/w的模</li>
+<li>函数间隔是$y_i (wx_i+b)$，其中$|wx+b|$相对地表示点x距离超平面的远近，符号是否一致就能表示分类是否正确，整个式子就能表示分类的正确性以及确信度</li>
+<li>然后我们看到函数间隔是有一定问题的，我们保持超平面不变，只是等比例地改变w，b，此时函数间隔也会发生变化</li>
+<li>因此引入几何间隔的概念，$y_i(\frac {w} {‖w‖}x_i+\frac {b}{‖w‖})$，将w，b同时除以w的模，使得间隔唯一确定下来</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">间隔最大化</div></div><div class="fold">
+<ul>
+<li>公式TODU</li>
+<li>首先，我们希望最大化几何间隔，约束条件是超平面(w, b)关于每个训练样本点的距离都至少是$\gamma $</li>
+<li>根据几何间隔与函数间隔的关系，可以写出第二个式子</li>
+<li>其中，函数间隔的取值并不影响最优化问题的解，我们不失一般性地取$\hat{\gamma }=1$，同时注意到最大化$\frac {1} {‖w‖}$与最小化$\frac {1} {2}‖w‖^2$是等价的</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">核函数、核技巧</div></div><div class="fold">
+<ul>
+<li>核函数：将输入从输入空间映射到特征空间中进行内积计算</li>
+<li>核技巧：通过核函数，隐式地在高维特征空间中进行学习</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">为什么要使用核函数</div></div><div class="fold">
+<ul>
+<li>样本在原始空间不可分时，需要将原始空间映射到一个高维的特征空间，使得样本在这个特征空间内线性可分</li>
+<li>映射函数往往不好求，通过核函数可以不显式地定义映射函数</li>
+<li>特征空间一般是高维的，甚至可能是无穷维</li>
+<li>而在SVM中，只涉及向量之间的内积运算</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是支持向量</div></div><div class="fold">
+<ul>
+<li>训练数据集的样本点与分离超平面距离最近的样本点的实例</li>
+<li>也就是$wx+b = ±1$上的点</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">SMO算法</div></div><div class="fold">
+<ul>
+<li>在SVM中，会有很多变量需要进行最优化求</li>
+<li>SMO的基本思路就是选择两个变量，固定其他变量，针对这两个变量进行求解</li>
+<li>这样不断将原问题分解为只有两个变量的子问题，并对子问题进行解析求解</li>
+<li>直到所有的变量都满足KTT条件为止</li>
+<li>第一个变量选取：最不满足KTT条件的样本点</li>
+<li>第二个变量选取：与第一个变量间距最大</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">各种核函数</div></div><div class="fold">
+<ul>
+<li>多项式核$K_Q(x_i,x_j)=(\zeta + \gamma x_i^Tx_j)^Q$</li>
+<li>高斯核函数$K(x_i,x_j)=exp(-\frac{\left | x_i-x_j \right |^2}{2\sigma ^2})$<ul>
+<li>$\sigma$很大，低维；$\sigma$很小，高维，可能过拟合</li>
+<li>为什么也叫径向基核函数，因为高斯函数本身就是一个径向基函数，径向基函数是取值依赖于距离的函数</li>
+</ul>
+</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">为什么RBF能映射到无穷维</div></div><div class="fold">
+<ul>
+<li>泰勒展开</li>
+<li><img src="./image/offer/Taylor.png" alt="Taylor"></li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">为什么RBF能映射到无穷维</div></div><div class="fold">
+<ul>
+<li>TODU</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">为什么RBF能映射到无穷维</div></div><div class="fold">
+<ul>
+<li>TODU</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">为什么RBF能映射到无穷维</div></div><div class="fold">
 <ul>
 <li>TODU</li>
 </ul>
@@ -1094,7 +1214,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习基本概念"><span class="nav-number">1.</span> <span class="nav-text">机器学习基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LR"><span class="nav-number">2.</span> <span class="nav-text">LR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#K-Means"><span class="nav-number">3.</span> <span class="nav-text">K-Means</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树"><span class="nav-number">4.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机森林"><span class="nav-number">5.</span> <span class="nav-text">随机森林</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成学习"><span class="nav-number">6.</span> <span class="nav-text">集成学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARIMA"><span class="nav-number">7.</span> <span class="nav-text">ARIMA</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习基本概念"><span class="nav-number">1.</span> <span class="nav-text">机器学习基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LR"><span class="nav-number">2.</span> <span class="nav-text">LR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM"><span class="nav-number">3.</span> <span class="nav-text">SVM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#K-Means"><span class="nav-number">4.</span> <span class="nav-text">K-Means</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#决策树"><span class="nav-number">5.</span> <span class="nav-text">决策树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机森林"><span class="nav-number">6.</span> <span class="nav-text">随机森林</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成学习"><span class="nav-number">7.</span> <span class="nav-text">集成学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARIMA"><span class="nav-number">8.</span> <span class="nav-text">ARIMA</span></a></li></ol></div>
             
 
           </div>
@@ -1126,7 +1246,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">98k</span>
   
 
   
