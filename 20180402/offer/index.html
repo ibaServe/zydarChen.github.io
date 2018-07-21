@@ -376,7 +376,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">3k</span>
+                <span title="字数统计">4k</span>
               
 
               
@@ -419,8 +419,20 @@
 <li><div><div class="fold_hider"><div class="close hider_title">经验误差&泛化误差</div></div><div class="fold">
 <ul>
 <li>学习器在训练集上的误差称为训练误差或经验误差，在新样本上的误差称为泛化误差</li>
-<li>显然，我们希望得到泛化误差小的学习器；</li>
+<li>显然，我们希望得到泛化误差小的学习器</li>
 <li>然而，我们事先并不知道新样本是什么样，实际能做的是努力使经验误差最小化，同时需要对过拟合进行一定处理</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">MSE、RMSE、MRE、MAE、MAPE</div></div><div class="fold">
+<ul>
+<li>MSE：均方误差</li>
+<li>RMSE：均方根误差，针对异常值更加敏感；衡量预测值与真值之间的偏差，对误差去了平方，使得计算结果与较大值更相关，公式$RMSE=\sqrt{\frac{1}{n}\sum _{t=1}^n(|A_t-F_t|)^2}$</li>
+<li>MRE：平均相对误差</li>
+<li>MAE：平均绝对误差</li>
+<li>MAPE：平均绝对百分比误差，不仅考虑了预测值与真实值的误差，还考虑了误差与真实值之间的比例，公式$MAPE=\frac{100}{n}\sum _{t=1}^n|\frac{A_t-F_t}{A_t}|$</li>
+<li>other</li>
 </ul>
 
 </div></div>
