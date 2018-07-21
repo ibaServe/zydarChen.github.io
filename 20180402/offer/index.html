@@ -376,7 +376,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">4k</span>
+                <span title="字数统计">3k</span>
               
 
               
@@ -415,65 +415,7 @@
 <li>NLP</li>
 </ul>
 <a id="more"></a>
-<h1 id="机器学习基本概念"><a href="#机器学习基本概念" class="headerlink" title="机器学习基本概念"></a>机器学习基本概念</h1><ol>
-<li><div><div class="fold_hider"><div class="close hider_title">经验误差&泛化误差</div></div><div class="fold">
-<ul>
-<li>学习器在训练集上的误差称为训练误差或经验误差，在新样本上的误差称为泛化误差</li>
-<li>显然，我们希望得到泛化误差小的学习器；</li>
-<li>然而，我们事先并不知道新样本是什么样，实际能做的是努力使经验误差最小化，同时需要对过拟合进行一定处理</li>
-</ul>
-
-</div></div>
-</li>
-<li><div><div class="fold_hider"><div class="close hider_title">MSE、RMSE、MRE、MAE、MAPE</div></div><div class="fold">
-<ul>
-<li>MSE：均方误差</li>
-<li>RMSE：均方根误差，针对异常值更加敏感；衡量预测值与真值之间的偏差，对误差去了平方，使得计算结果与较大值更相关，公式$RMSE=\sqrt{\frac{1}{n}\sum _{t=1}^n(|A_t-F_t|)^2}$</li>
-<li>MRE：平均相对误差</li>
-<li>MAE：平均绝对误差</li>
-<li>MAPE：平均绝对百分比误差，不仅考虑了预测值与真实值的误差，还考虑了误差与真实值之间的比例，公式$MAPE=\frac{100}{n}\sum _{t=1}^n|\frac{A_t-F_t}{A_t}|$</li>
-<li>other</li>
-</ul>
-
-</div></div>
-</li>
-<li><div><div class="fold_hider"><div class="close hider_title">P、R、F1、ROC</div></div><div class="fold">
-<ul>
-<li>P：准确率/查准率，真正例(TP)占全部预测正例(TP+FP)的比例</li>
-<li>R：召回率/查全率，真正例(TP)占全部正例(TP+TF)的比例</li>
-<li>F1：准确率和召回率的调和平均<ul>
-<li>$F_1=\frac{2RP}{R+P}$</li>
-<li>$F_\beta =\frac{1}{1+\beta ^2}(\frac{1}{P}+\frac{\beta ^2}{R})$</li>
-</ul>
-</li>
-<li>ROC：横轴假正例率，纵轴真正例率</li>
-</ul>
-
-</div></div>
-</li>
-<li><div><div class="fold_hider"><div class="close hider_title">ROC曲线的画法</div></div><div class="fold">
-<ul>
-<li>对预测结果进行排序</li>
-<li>阈值设置为最大值，此时所有样本均为负例，真正例率与假正例率均为零，表现为原点</li>
-<li>逐渐降低阈值，依次使得每个样本预测为正例</li>
-<li>如果下一个样本是真正例，对应y值加上1/n，否则x值加上1/n（假设当前坐标为(x, y)，如果该样本是真正例，则下一个点坐标为$(x, y+\frac{1}{n^+})$；如果该样本是假正例，则下一个点坐标为$(x+\frac{1}{n^+}, y)$）</li>
-<li>最后阈值设置最小，使得所有样本预测为正例，此时对应坐标(1, 1)</li>
-</ul>
-
-</div></div>
-</li>
-<li><div><div class="fold_hider"><div class="close hider_title">防止过拟合的方法</div></div><div class="fold">
-<ul>
-<li>获取更多数据：从数据源头获取、根据数据分布生成、数据增广</li>
-<li>正则化：更小的参数值w意味着模型的复杂度更低，对训练数据的拟合刚刚好</li>
-<li>Bagging、Boosting、Dropout</li>
-<li>贝叶斯方法</li>
-</ul>
-
-</div></div>
-</li>
-</ol>
-<h1 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h1><ol>
+<h1 id="机器学习基本概念"><a href="#机器学习基本概念" class="headerlink" title="机器学习基本概念"></a>机器学习基本概念</h1><h1 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h1><ol>
 <li><div><div class="fold_hider"><div class="close hider_title">什么是K-Means</div></div><div class="fold">
 <ul>
 <li>K-Means是一种聚类算法，基本思想是对于给定的类别数目k，首先给出初始划分，通过迭代改变样本和簇的隶属关系，使得每一次改变后的划分方案都比前一次好</li>
@@ -1024,7 +966,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">95k</span>
+    <span title="站点总字数">94k</span>
   
 
   
