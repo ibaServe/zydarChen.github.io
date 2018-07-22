@@ -77,13 +77,13 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="https://zydarchen.github.io/about/index.html">
+<meta property="og:title" content="分类">
+<meta property="og:url" content="https://zydarchen.github.io/categories/index.html">
 <meta property="og:site_name" content="不好吃の蛋蛋">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-16T07:29:46.497Z">
+<meta property="og:updated_time" content="2018-01-16T07:30:05.881Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于">
+<meta name="twitter:title" content="分类">
 
 
 
@@ -111,7 +111,7 @@
 
 
 
-  <link rel="canonical" href="https://zydarchen.github.io/about/"/>
+  <link rel="canonical" href="https://zydarchen.github.io/categories/"/>
 
 
 
@@ -376,7 +376,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">9k</span>
+                <span title="字数统计">11k</span>
               
 
               
@@ -1133,60 +1133,122 @@
 </li>
 </ol>
 <h1 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h1><ol>
-<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
-<p>- </p>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是RNN</div></div><div class="fold">
+<ul>
+<li>RNN对序列的每一个元素都执行相同的任务，输出依赖于先前的计算</li>
+<li>普通神经网络，基于data0预测result0，data1预测result1</li>
+<li>当我们的data0跟data1是相互关联的时候，普通的神经网络不能了解这种关联</li>
+<li>而RNN就是让神经网络具备记住之前发生事情的能力</li>
+<li>当data0预测result0的时候形成记忆state0，然后在data1预测result1的时候将之前的记忆state0调用过来</li>
+</ul>
 
 </div></div>
 </li>
-<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
-<p>- </p>
+<li><div><div class="fold_hider"><div class="close hider_title">RNN公式</div></div><div class="fold">
+<ul>
+<li>$o_t=g(Vs_t)$</li>
+<li>$s_t=f(Ux_t+Ws_{t-1})$</li>
+</ul>
 
 </div></div>
 </li>
-<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
-<p>- </p>
+<li><div><div class="fold_hider"><div class="close hider_title">解释梯度消失以及LSTM怎么缓解</div></div><div class="fold">
+<ul>
+<li>在传统的RNN中，单元状态$s_t$可以表示为，$s_t=f(Ux_t+W_{t-1})$，根据求导的链式法则，可以看出，$s_t$对U、W的偏导跟$s_{t-1}$ 有关，最后会形成一个与W有关的累乘形式</li>
+<li>这种累乘的求导形式正是导致梯度问题的关键，简单的说，如果这个W小于1，最后的误差就几乎消失，如果这个W大于1，不断累乘，误差可能变成一个无穷大的数</li>
+<li>在LSTM中，由于门控单元的引入，在反向传播中，先会经过一个加法操作，然后再与遗忘门$f_t$相乘，累乘形式中不再是固定的W，而是变化的遗忘门$f_t$，这能在一定程度上缓解梯度消失</li>
+<li>进一步看，这个遗忘门是一个sigmoid函数，最终的累乘形式中包含$tanh′(x)\sigma(y)$的形式，而这个乘积本身是一个非0即1的值</li>
+<li>简单地说，原始RNN的隐藏层只有一个状态，它对于短期的输入非常敏感，LSTM就是再增加一个状态，用它来保存长期的状态</li>
+</ul>
 
 </div></div>
 </li>
-<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
-<p>- </p>
+<li><div><div class="fold_hider"><div class="close hider_title">不同反向传播方式</div></div><div class="fold">
+<ul>
+<li>全反向传播<ul>
+<li>误差会一直传递到初始时刻</li>
+<li>计算开销大</li>
+<li>梯度消失的存在，使得进一步反向传播不再重要</li>
+</ul>
+</li>
+<li>截断反向传播<ul>
+<li>真截断：每个误差反向传播n steps</li>
+<li>Tensorflow-style：切成n个子序列，n个误差被反向传播了n steps</li>
+<li>结论：随着BPTT steps的增加，Tensorflow-style逐渐占据优势</li>
+</ul>
+</li>
+</ul>
 
 </div></div>
 </li>
-<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
-<p>- </p>
+<li><div><div class="fold_hider"><div class="close hider_title">LSTM的门</div></div><div class="fold">
+<p><img src="/image/offer/LSTM.png" alt="LSTM"></p>
+<ul>
+<li>遗忘门决定了上一时刻的单元状态$c_{t−1}$有多少保留到当前时刻$c_t$</li>
+<li>输入门决定了当前时刻网络的输入$x_t$有多少保存到单元状态$c_t$</li>
+<li>输出门决定了单元状态$c_t$有多少输出到LSTM的当前输出值$h_t$</li>
+<li>遗忘门：$f_t=W_f[h_{t-1},x_t]+b_f$</li>
+<li>输入门：$i_t=W_i[h_{t-1},x_t]+b_i$</li>
+<li>输出门：$o_t=W_o[h_{t-1},x_t]+b_o$</li>
+<li>本次输入的单元状态：$c’_t=tanh(W_c[h_{t-1},x_t]+b_c)$</li>
+<li>本次输出的单元状态：$c_t=f_t\circ c_{t-1}+i_t \circ c’_t$</li>
+<li>最终输出：$h_t=o_t \circ tanh(c_t)$</li>
+</ul>
 
 </div></div>
 </li>
-<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
-<p>- </p>
+<li><div><div class="fold_hider"><div class="close hider_title">sigmoid、tanh、Relu</div></div><div class="fold">
+<ul>
+<li>sigmoid<ul>
+<li>梯度饱和问题：sigmoid在激活值接近于0或者1时，梯度接近于0，反向传播过程中容易出现梯度弥散</li>
+<li>sigmoid函数输出不是以0为中心</li>
+</ul>
+</li>
+<li>tanh<ul>
+<li>同样存在梯度饱和问题</li>
+<li>函数输出以0为中心</li>
+</ul>
+</li>
+<li>Relu(Rectified Linear Unit，修正线性单元)<ul>
+<li>减轻了梯度弥散问题</li>
+<li>Relu会使部分神经元的输出为0，造成网络的稀疏性，缓解过拟合</li>
+<li>计算速度快</li>
+</ul>
+</li>
+</ul>
 
 </div></div>
 </li>
-<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
-<p>- </p>
+<li><div><div class="fold_hider"><div class="close hider_title">RNN梯度问题公式</div></div><div class="fold">
+<ul>
+<li>TODU</li>
+</ul>
 
 </div></div>
 </li>
-<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
-<p>- </p>
+<li><div><div class="fold_hider"><div class="close hider_title">GRU</div></div><div class="fold">
+<ul>
+<li>Gated Recurrent Unit</li>
+<li>更新门：$z_t=\sigma (W_z[h_{t-1},x_t]+b_z)$</li>
+<li>重置门：$r_t=\sigma (W_r[h_{t-1},x_t]+b_r)$</li>
+<li>候选隐藏层：$h’_t=tanh(W[r_t \circ h_{t-1}, x_t]+b)$</li>
+<li>输出：$h_t=(1-z_t \circ h_{t-1}+z_t \circ h’_t)$</li>
+<li>更新门：决定了先前记忆信息的保留程度</li>
+<li>重置门：决定了新的输入与前一时刻记忆的组合方式</li>
+<li>当$r_t=1$，$z_t=0$。这就是个普通的RNN</li>
+</ul>
 
 </div></div>
 </li>
+</ol>
+<h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><ol>
 <li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
 <p>- </p>
 
 </div></div>
 </li>
 </ol>
-<h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><h1 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h1><ol>
-<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
-<p>- </p>
-
-</div></div>
-</li>
-</ol>
-
+<h1 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h1>
       
     </div>
     
@@ -1445,7 +1507,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">100k</span>
+    <span title="站点总字数">101k</span>
   
 
   
