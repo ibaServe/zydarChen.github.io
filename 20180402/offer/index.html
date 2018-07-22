@@ -77,13 +77,13 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="https://zydarchen.github.io/categories/index.html">
+<meta property="og:title" content="关于">
+<meta property="og:url" content="https://zydarchen.github.io/about/index.html">
 <meta property="og:site_name" content="不好吃の蛋蛋">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-16T07:30:05.881Z">
+<meta property="og:updated_time" content="2018-01-16T07:29:46.497Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
+<meta name="twitter:title" content="关于">
 
 
 
@@ -111,7 +111,7 @@
 
 
 
-  <link rel="canonical" href="https://zydarchen.github.io/categories/"/>
+  <link rel="canonical" href="https://zydarchen.github.io/about/"/>
 
 
 
@@ -376,7 +376,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">11k</span>
+                <span title="字数统计">12k</span>
               
 
               
@@ -494,6 +494,37 @@
 </tr>
 </tbody>
 </table>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">常用的归一化方式</div></div><div class="fold">
+<ul>
+<li>标准归一化<ul>
+<li>$z=\frac{x_i-\mu }{\delta }$</li>
+<li>当使用距离来度量相似性时，标准归一化表现更好</li>
+<li>需要原始数据至少近似呈现正态分布</li>
+</ul>
+</li>
+<li>最大最小归一化<ul>
+<li>$z=\frac{x_i-min }{max-min}$</li>
+<li>缺点是新数据的加入可能导致max和min的变化</li>
+<li>对方差非常小的属性可以增强其稳定性</li>
+<li>维持稀疏矩阵中为0的条目</li>
+<li>图像处理中，常将RGB图像转化为灰度图像后将其值限定在[0 255]的范围</li>
+</ul>
+</li>
+<li>线性比例变化法</li>
+<li>softmax变化</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">为什么要归一化</div></div><div class="fold">
+<ul>
+<li>不同特征之间往往具有不同的量纲和量纲单位，使得损失函数可能呈现出扁平状，此时的梯度下降过程是曲折的</li>
+<li>提升模型的精度，量级相差太多的数运算会导致许多错误，让损失函数中的数据不要太大或者太小</li>
+<li>梯度下降过程中，能更好的找到最小值</li>
+</ul>
 
 </div></div>
 </li>
@@ -1242,13 +1273,93 @@
 </li>
 </ol>
 <h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><ol>
-<li><div><div class="fold_hider"><div class="close hider_title">点击显/隐</div></div><div class="fold">
-<p>- </p>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是CNN</div></div><div class="fold">
+<ul>
+<li>卷积神经网络里的“卷积”，代表的是神经网络不再是对每个像素的输入信息做处理了,而是图片上每一小块像素区域进行处理, 这种做法加强了图片信息的连续性。使得神经网络能看到图形, 而非一个点。</li>
+<li>卷积神经网络与传统全连接网络的区别在于1. 神经元间的连接是非全连接的，2. 同一层中某些神经元之间的连接的权重是共享的</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">什么是pooling</div></div><div class="fold">
+<ul>
+<li>在每一次进行多步的卷积时, 神经层可能会无意地丢失一些信息</li>
+<li>pooling就是为了解决这个问题</li>
+<li>在进行卷积时不压缩长宽，也就是步长设置为1，这样可以尽量保留更多信息，压缩的工作就交给pooling层去做</li>
+<li>pooling分为Max pooling和Average pooling，前者取最大值代表一小块区域，后者取平均值</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">Relu的优势</div></div><div class="fold">
+<ul>
+<li>速度快，和sigmoid函数需要计算指数和倒数相比，relu函数其实就是一个max(0,x)，计算代价小很多</li>
+<li>减轻梯度消失问题</li>
+<li>稀疏性，relu函数在输入小于0时是完全不激活的，因此可以获得一个更低的激活率</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">TODU</div></div><div class="fold">
+<ul>
+<li>TODU</li>
+</ul>
 
 </div></div>
 </li>
 </ol>
-<h1 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h1>
+<h1 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h1><ol>
+<li><div><div class="fold_hider"><div class="close hider_title">语言模型</div></div><div class="fold">
+<ul>
+<li>前面i个词出现的条件下，第i+1个词出现的概率</li>
+<li>$P(x_i, …, x_m)=\prod _{i=1}^mP(w_i|w_i, …, w_{i-1})$</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">Word2Vec、Embedding</div></div><div class="fold">
+<ul>
+<li>Word2Vec是从大量文本语料中无监督的方式学习语义知识的一种模型</li>
+<li>Embedding其实就是一个映射，将单词从原先所属的空间映射到新的多维空间中，也就是把原先词所在空间嵌入到一个新的空间中去</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">CBOW、Skip-Gram</div></div><div class="fold">
+<ul>
+<li>CBOW：给定上下文，来预测input word</li>
+<li>Skip-Gram：给定input word，来预测上下文</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">Skip-Gram</div></div><div class="fold">
+<ul>
+<li>在skip_window*2的窗口范围内，随机选取num_skips个词，产生一系列（input_word, output_word）对</li>
+<li>(1, 10000)的向量与(10000, 300)的向量直接相乘将消耗大量的资源，转换为取出矩阵中对应向量值为1的索引行</li>
+<li>改进：<ul>
+<li>词组</li>
+<li>高频词抽样处理，抽样率根据出现频次计算</li>
+<li>负采样，每次训练一个样本仅更新一小部分的权重<ul>
+<li>对应输出为1以及少数输出为0的神经元</li>
+<li>negative words的选取，出现频次越高，越容易被选取</li>
+<li>实际代码中有一种unigram table，一亿维，单词索引重复出现，负采样概率越高，出现次数越多</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div></div>
+</li>
+<li><div><div class="fold_hider"><div class="close hider_title">TODU</div></div><div class="fold">
+<ul>
+<li>TODU</li>
+</ul>
+
+</div></div></li>
+</ol>
+
       
     </div>
     
@@ -1507,7 +1618,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">101k</span>
+    <span title="站点总字数">103k</span>
   
 
   
