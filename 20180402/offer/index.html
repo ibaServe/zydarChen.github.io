@@ -428,7 +428,7 @@
 <li><div><div class="fold_hider"><div class="close hider_title">MSE、RMSE、MRE、MAE、MAPE</div></div><div class="fold">
 <ul>
 <li>MSE：均方误差</li>
-<li>RMSE：均方根误差，针对异常值更加敏感；衡量预测值与真值之间的偏差，对误差去了平方，使得计算结果与较大值更相关，公式$RMSE=\sqrt{\frac{1}{n}\sum _{t=1}^n(|A_t-F_t|)^2}$</li>
+<li>RMSE：均方根误差，针对异常值更加敏感；衡量预测值与真值之间的偏差，对误差取了平方，使得计算结果与较大值更相关，公式$RMSE=\sqrt{\frac{1}{n}\sum _{t=1}^n(|A_t-F_t|)^2}$</li>
 <li>MRE：平均相对误差</li>
 <li>MAE：平均绝对误差</li>
 <li>MAPE：平均绝对百分比误差，不仅考虑了预测值与真实值的误差，还考虑了误差与真实值之间的比例，公式$MAPE=\frac{100}{n}\sum _{t=1}^n|\frac{A_t-F_t}{A_t}|$</li>
@@ -582,7 +582,7 @@
 
 </div></div>
 </li>
-<li><div><div class="fold_hider"><div class="close hider_title">交叉熵</div></div><div class="fold">
+<li><div><div class="fold_hider"><div class="close hider_title">信息量、熵、交叉熵</div></div><div class="fold">
 <ul>
 <li>信息量：事件发生概率越大，它所携带的信息量越小$l(x)=-logp(x)$</li>
 <li>熵：衡量的是事件发生的确定性，所有可能取值的信息量的期望，熵越大，变量的取值就越不确定$H(x)=-\sum _xP(x)logP(x)$</li>
@@ -674,7 +674,7 @@
 </li>
 <li><div><div class="fold_hider"><div class="close hider_title">SMO算法</div></div><div class="fold">
 <ul>
-<li>在SVM中，会有很多变量需要进行最优化求</li>
+<li>在SVM中，会有很多变量需要进行最优化求解</li>
 <li>SMO的基本思路就是选择两个变量，固定其他变量，针对这两个变量进行求解</li>
 <li>这样不断将原问题分解为只有两个变量的子问题，并对子问题进行解析求解</li>
 <li>直到所有的变量都满足KTT条件为止</li>
@@ -1097,7 +1097,7 @@
 <li>梯度下降法是最小化目标函数$J(\theta )$的一种方法</li>
 <li>梯度下降法利用目标函数关于参数的梯度$\bigtriangledown _\theta J(\theta )$的反方向更新参数。</li>
 <li>学习率$\eta$决定达到最小值或者局部最小值过程中所采用的步长大小</li>
-<li>对于凸误差函数，批l量梯度下降法能够保证收敛到全局最小值，对于非凸函数，则收敛到一个局部最小值</li>
+<li>对于凸误差函数，批量梯度下降法能够保证收敛到全局最小值，对于非凸函数，则收敛到一个局部最小值</li>
 </ul>
 
 </div></div>
@@ -1333,7 +1333,7 @@
 
 </div></div>
 </li>
-<li><div><div class="fold_hider"><div class="close hider_title">Skip-Gram</div></div><div class="fold">
+<li><div><div class="fold_hider"><div class="close hider_title">Skip-Gram_in_Word2Vec</div></div><div class="fold">
 <ul>
 <li>在skip_window*2的窗口范围内，随机选取num_skips个词，产生一系列（input_word, output_word）对</li>
 <li>(1, 10000)的向量与(10000, 300)的向量直接相乘将消耗大量的资源，转换为取出矩阵中对应向量值为1的索引行</li>
