@@ -2,7 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zydarchen.github.io/20180402/offer/</loc>
+    <loc>https://zydarchen.github.io/20180801/offer_coding/</loc>
+    
+    <lastmod>2018-08-01T15:27:49.049Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20180412/sublime_using/</loc>
+    
+    <lastmod>2018-08-01T15:23:34.984Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20180402/offer_ML/</loc>
     
     <lastmod>2018-07-22T08:39:58.605Z</lastmod>
     
@@ -16,7 +30,7 @@
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20180623/hangzhou2018/</loc>
+    <loc>https://zydarchen.github.io/notdisplay/hangzhou2018.html</loc>
     
     <lastmod>2018-06-23T07:15:38.400Z</lastmod>
     
@@ -26,13 +40,6 @@
     <loc>https://zydarchen.github.io/20180612/cs224n-1/</loc>
     
     <lastmod>2018-06-12T08:18:23.377Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/notdisplay/CS224N_notebook.html</loc>
-    
-    <lastmod>2018-06-04T15:09:16.045Z</lastmod>
     
   </url>
   
@@ -54,13 +61,6 @@
     <loc>https://zydarchen.github.io/20170816/git-note/</loc>
     
     <lastmod>2018-05-09T14:54:48.536Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20180412/sublime_using/</loc>
-    
-    <lastmod>2018-04-12T13:37:53.909Z</lastmod>
     
   </url>
   
