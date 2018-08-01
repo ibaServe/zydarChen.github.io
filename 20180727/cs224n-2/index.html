@@ -117,7 +117,7 @@
 
 
 
-  <title>git安装与基本使用 | 不好吃の蛋蛋</title>
+  <title>CS224N笔记-Lecture2 Word Vectors | 不好吃の蛋蛋</title>
   
 
 
@@ -312,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zydarchen.github.io/20170816/git-note/">
+    <link itemprop="mainEntityOfPage" href="https://zydarchen.github.io/20180727/cs224n-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zydarChen">
@@ -329,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git安装与基本使用</h1>
+          <h1 class="post-title" itemprop="name headline">CS224N笔记-Lecture2 Word Vectors</h1>
         
 
         <div class="post-meta">
@@ -341,7 +341,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-16T11:20:10+08:00">2017-08-16</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T23:36:17+08:00">2018-07-27</time>
             
 
             
@@ -361,7 +361,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具使用/" itemprop="url" rel="index"><span itemprop="name">工具使用</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS224N学习笔记/" itemprop="url" rel="index"><span itemprop="name">CS224N学习笔记</span></a></span>
 
                 
                 
@@ -394,7 +394,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">3k</span>
+                <span title="字数统计">1k</span>
               
 
               
@@ -418,88 +418,54 @@
       
 
       
-        <p>个人使用git问题记录</p>
+        <ul>
+<li>Word meaning</li>
+<li>Word2Vec introduction</li>
+<li>Research highlight</li>
+<li>Word2Vec objective function gradients</li>
+<li>Optimization refresher</li>
+</ul>
 <a id="more"></a>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li>Windows<ul>
-<li>下载<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></li>
-<li>双击安装，一路next</li>
+<blockquote>
+<p><a href="http://www.hankcs.com/nlp/word-vector-representations-word2vec.html" target="_blank" rel="noopener">CS224n笔记2 词的向量表示：word2vec</a></p>
+</blockquote>
+<h2 id="Word-meaning"><a href="#Word-meaning" class="headerlink" title="Word meaning"></a>Word meaning</h2><ul>
+<li>在过去的几个世纪里，计算机一直使用分类(taxonomy)词典处理词语的意思，比如WordNet词库</li>
+<li>过去的离散表示(discrete representation)会存在一定的问题<ul>
+<li>即使是再完备的词典，也会忽略细微的差别，比如同义词</li>
+<li>缺少新词</li>
+<li>主观性强</li>
+<li>需要大量人力</li>
+<li>计算机难于理解词的相似性</li>
 </ul>
 </li>
-<li>linux<ul>
-<li><code>sudo apt-get install git</code></li>
+<li>无论是规则学派，还是统计学派，绝大多数NLP学家都将词语作为最小单位。事实上，词语只是词表长度的one-hot向量，这是一种localist representation</li>
+<li>通过一个单词的上下文可以得到它的意思，这是现代统计自然语言处理最成功的思想之一<blockquote>
+<p>“You shall know a word by the company it keeps”——J. R. Firth 1957: 11</p>
+</blockquote>
+</li>
+<li>distributed representations与symbolic representations（localist representation、one-hot representation）相对；discrete representation则与后者及denotation的意思相似。切不可搞混distributed和discrete这两个单词</li>
+<li>Basic idea of learning neural network word embeddings<ul>
+<li>定义一个以预测某个单词的上下文模型：<br>$$p(context|w_t)=$$</li>
+<li>损失函数定义如下：<br>$$J=1-p(w_{-t}|w_t)$$</li>
+<li>这里的$w_{-t}$表示$w_t$的上下文，然后在一个大型语料库中的不同位置得到训练实例，调整词向量，最小化损失函数</li>
 </ul>
 </li>
-<li><p>配置用户</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">'zydarChen'</span></span><br><span class="line">git config --global user.email <span class="string">'zydarChen@outlook.com'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>生成ssh key</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">'zydarChen@outlook.com'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>与GitHub、Coding连接</p>
-</li>
 </ul>
-<p>首先将<code>id_rsa.pub</code>内容复制进账户SSH Key<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line">ssh -T git@git.coding.net</span><br></pre></td></tr></table></figure></p>
-<h2 id="Git基本使用"><a href="#Git基本使用" class="headerlink" title="Git基本使用"></a>Git基本使用</h2><p>参考：</p>
-<ul>
-<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰Git教程</a></li>
-<li><a href="https://morvanzhou.github.io/tutorials/others/git/" target="_blank" rel="noopener">莫烦PythonGit版本管理</a></li>
+<h1 id="Word2Vec-introduction"><a href="#Word2Vec-introduction" class="headerlink" title="Word2Vec introduction"></a>Word2Vec introduction</h1><ul>
+<li>Word2Vec的主要思路<ul>
+<li>两种算法<ul>
+<li>Skip-grams(SG)：预测上下文</li>
+<li>Continuous Bag of Words(CBOW)：预测目标词</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/scut-githuber/os-util.git # clone repository到本地</span><br><span class="line">cd gitDir</span><br><span class="line">git init # 初始化空的Git仓库repository</span><br><span class="line">git add filename # 将文件添加到repository</span><br><span class="line">git add -A # 添加所有文件到repository</span><br><span class="line">git commit -m &quot;wrote a readme file&quot; # 提交并写提交说明</span><br><span class="line">git status # 查看已修改文件</span><br><span class="line">git diff filename # 查看filename被修改的内容</span><br><span class="line">git log [--pretty=oneline]# 查看提交日志</span><br><span class="line">git reset --hard HEAD^ # 滚回上一版本</span><br><span class="line">git reset --hard 3628164 # 指定ID回滚或者重做，`3628164`是commit id，git自动补全</span><br><span class="line">git reflog # 查看命令历史，可以查看各个版本的commit id</span><br><span class="line">git checkout -- name # 让这个文件回到最近一次git commit或git add时的状态。</span><br><span class="line">git reset HEAD filename # 将filename从暂存区退回工作区</span><br></pre></td></tr></table></figure>
-<h3 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h3><ul>
-<li>工作区:工作目录，如<code>gitDir</code></li>
-<li>版本库：工作区中的隐藏目录<code>.git</code><br><img src="/image/other/git.png" alt="工作区与版本库"></li>
+</li>
+<li>两种稍微高效的训练方法<ul>
+<li>Hierarchical softmax</li>
+<li>Negative sampling</li>
 </ul>
-<p>第一步是用<code>git add</code>把文件添加进去，实际上就是把文件修改添加到暂存区；<br>第二步是用<code>git commit</code>提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
-<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><p><img src="/image/other/git流程图.png" alt="git流程图"></p>
-<ul>
-<li><p>初始在工作目录中添加’test.py’文件，文件处于’untracked’状态：红色的’??’</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git status -s</span><br><span class="line">?? test.py</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>add之后，文件处于’staged’状态：绿色的’A’</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add test.py</span><br><span class="line">$ git status -s</span><br><span class="line">A test.py</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>commit之后，文件处于’unmodified’状态，working tree clean</p>
-</li>
-<li><code>git log --oneline</code>查看commit记录。查看使用reset可回到之前版本，<code>git reset --hard HEAD^</code>，此时工作目录中’test.py’文件将被删除。</li>
-<li>add之后，修改’test.py’文件内容，文件处于’modified’状态：绿色的’A’——表示新增文件操作已添加至暂存区，可提交，红色的’M’——表示修改操作仍位于工作区，不可提交。此时执行commit只会提交新增文件操作。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git status -s</span><br><span class="line">AM test.py</span><br><span class="line">$ git commit -m <span class="string">'test.py'</span></span><br><span class="line">$ git status -s</span><br><span class="line">M test.py</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><ul>
-<li>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。</li>
-<li>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD file</code>，就回到了场景1，第二步按场景1操作。</li>
-<li>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，在没有推送到远程库的前提下，<code>git reset --hard HEAD^</code>滚回上一版本。</li>
-</ul>
-<h3 id="误删与恢复"><a href="#误删与恢复" class="headerlink" title="误删与恢复"></a>误删与恢复</h3><p><code>git checkout -- test.txt</code><br><code>git checkout</code>其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
-<h3 id="分支使用"><a href="#分支使用" class="headerlink" title="分支使用"></a>分支使用</h3><ul>
-<li><code>git branch</code>：查看分支</li>
-<li><code>git branch &lt;name&gt;</code>：创建分支</li>
-<li><code>git checkout &lt;name&gt;</code>：切换分支</li>
-<li><code>git checkout -b &lt;name&gt;</code>：创建并切换分支</li>
-<li><code>git merge &lt;name&gt;</code>：合并某分支到当前分支</li>
-<li><code>git merge --no-ff -m &quot;merge with no-ff&quot; &lt;name&gt;</code>:强制禁用Fast forward模式，不丢掉分支信息</li>
-<li><code>git branch -d &lt;name&gt;</code>：删除分支</li>
-</ul>
-<h3 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h3><p>当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。</p>
-<ul>
-<li><code>git stash</code>:”储存”当前工作现场</li>
-<li><code>git stash list</code>:查看已储存现场</li>
-<li><code>git stash apply</code>:恢复现场</li>
-<li><code>git stash pop</code>：恢复现场并产出储存</li>
-</ul>
-<h3 id="JetBrains系列使用git"><a href="#JetBrains系列使用git" class="headerlink" title="JetBrains系列使用git"></a>JetBrains系列使用git</h3><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
-<li>先在GitHub上建好repository，git clone 到本地</li>
-<li>鼓励大量使用分支</li>
-<li>通过创建bug分支的方式来修复bug</li>
-<li>开发一个新feature，最好新建一个分支</li>
-</ul>
-<h2 id="gitignore文件"><a href="#gitignore文件" class="headerlink" title=".gitignore文件"></a>.gitignore文件</h2><ul>
-<li><code>#</code>注释行</li>
-<li><code>dir/</code>忽略dir文件</li>
-<li><code>*.zip</code>忽略zip文件</li>
-<li><code>ignore.md</code>忽略单个文件</li>
-<li><code>!</code>不忽略</li>
-<li><code>doc/*.md</code>忽略<code>doc/</code>目录下所有的.md文件，但不包括其他子目录下的.md文件</li>
+</li>
 </ul>
 
       
@@ -547,7 +513,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/NLP/" rel="tag"># NLP</a>
           
         </div>
       
@@ -560,8 +526,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20170730/ML-Foundations-2/" rel="next" title="《机器学习基石》学习笔记#2">
-                <i class="fa fa-chevron-left"></i> 《机器学习基石》学习笔记#2
+              <a href="/20180630/quick_sql/" rel="next" title="SQL快速参考">
+                <i class="fa fa-chevron-left"></i> SQL快速参考
               </a>
             
           </div>
@@ -570,8 +536,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/20170825/auto-yys/" rel="prev" title="Python实现自动挂机脚本">
-                Python实现自动挂机脚本 <i class="fa fa-chevron-right"></i>
+              <a href="/20180801/offer_coding/" rel="prev" title="剑指offer笔记">
+                剑指offer笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -728,7 +694,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git基本使用"><span class="nav-number">2.</span> <span class="nav-text">Git基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工作区和暂存区"><span class="nav-number">2.1.</span> <span class="nav-text">工作区和暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程图"><span class="nav-number">2.2.</span> <span class="nav-text">流程图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销修改"><span class="nav-number">2.3.</span> <span class="nav-text">撤销修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误删与恢复"><span class="nav-number">2.4.</span> <span class="nav-text">误删与恢复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支使用"><span class="nav-number">2.5.</span> <span class="nav-text">分支使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bug分支"><span class="nav-number">2.6.</span> <span class="nav-text">bug分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JetBrains系列使用git"><span class="nav-number">2.7.</span> <span class="nav-text">JetBrains系列使用git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">2.8.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore文件"><span class="nav-number">3.</span> <span class="nav-text">.gitignore文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Word-meaning"><span class="nav-number">1.</span> <span class="nav-text">Word meaning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Word2Vec-introduction"><span class="nav-number"></span> <span class="nav-text">Word2Vec introduction</span></a></div>
             
 
           </div>
