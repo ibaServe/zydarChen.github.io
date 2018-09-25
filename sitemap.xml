@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zydarchen.github.io/about/index.html</loc>
+    
+    <lastmod>2018-09-25T08:26:57.661Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zydarchen.github.io/20180925/stateful_LSTM/</loc>
     
     <lastmod>2018-09-25T08:08:29.977Z</lastmod>
@@ -194,13 +201,6 @@
     <loc>https://zydarchen.github.io/commonweal/index.html</loc>
     
     <lastmod>2018-01-16T07:29:55.425Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/about/index.html</loc>
-    
-    <lastmod>2018-01-16T07:29:46.497Z</lastmod>
     
   </url>
   
