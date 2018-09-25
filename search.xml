@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[捋一捋Keras LSTM的stateful与stateless]]></title>
+    <url>%2F20180925%2Fstateful_LSTM%2F</url>
+    <content type="text"><![CDATA[占个坑先 参考Keras之stateful LSTM全面解析+实例测试Stateful LSTM in KerasStateful and Stateless LSTM for Time Series Forecasting with PythonUnderstanding Stateful LSTM Recurrent Neural Networks in Python with Keraskeras/examples/lstm_stateful.py]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Keras</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CS224N笔记-Lecture2 Word Vectors]]></title>
     <url>%2F20180727%2Fcs224n-2%2F</url>
     <content type="text"><![CDATA[Word meaning Word2Vec introduction Research highlight Word2Vec objective function gradients Optimization refresher CS224n笔记2 词的向量表示：word2vec Word meaning 在过去的几个世纪里，计算机一直使用分类(taxonomy)词典处理词语的意思，比如WordNet词库 过去的离散表示(discrete representation)会存在一定的问题 即使是再完备的词典，也会忽略细微的差别，比如同义词 缺少新词 主观性强 需要大量人力 计算机难于理解词的相似性 无论是规则学派，还是统计学派，绝大多数NLP学家都将词语作为最小单位。事实上，词语只是词表长度的one-hot向量，这是一种localist representation 通过一个单词的上下文可以得到它的意思，这是现代统计自然语言处理最成功的思想之一 “You shall know a word by the company it keeps”——J. R. Firth 1957: 11 distributed representations与symbolic representations（localist representation、one-hot representation）相对；discrete representation则与后者及denotation的意思相似。切不可搞混distributed和discrete这两个单词 Basic idea of learning neural network word embeddings 定义一个以预测某个单词的上下文模型：$$p(context|w_t)=$$ 损失函数定义如下：$$J=1-p(w_{-t}|w_t)$$ 这里的$w_{-t}$表示$w_t$的上下文，然后在一个大型语料库中的不同位置得到训练实例，调整词向量，最小化损失函数 Word2Vec introduction Word2Vec的主要思路 两种算法 Skip-grams(SG)：预测上下文 Continuous Bag of Words(CBOW)：预测目标词 两种稍微高效的训练方法 Hierarchical softmax Negative sampling]]></content>
@@ -10,17 +21,6 @@
       <tags>
         <tag>NLP</tag>
         <tag>CS224n</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[捋一捋Keras LSTM的stateful与stateless]]></title>
-    <url>%2F20180727%2Fstateful_LSTM%2F</url>
-    <content type="text"><![CDATA[占个坑先 参考Keras之stateful LSTM全面解析+实例测试Stateful LSTM in KerasStateful and Stateless LSTM for Time Series Forecasting with PythonUnderstanding Stateful LSTM Recurrent Neural Networks in Python with Keraskeras/examples/lstm_stateful.py]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Keras</tag>
       </tags>
   </entry>
   <entry>
