@@ -442,7 +442,11 @@
 <p>因为Anaconda内置了jupyter，任务结束了<br>输入<code>jupyter notebook</code>即可打开</p>
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>首先生成notebook配置文件：<code>jupyter notebook --generate-config</code>，一般路径是<code>~/.jupyter/jupyter_notebook_config.py</code>，vim直接打开，配置内容如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.ip = &apos;*&apos;</span><br><span class="line">c.NotebookApp.notebook_dir = u&apos;/the/path/of/jupyternotebook&apos;  # 配置notebook目录</span><br><span class="line">c.NotebookApp.open_browser = False  # 默认不打开浏览器页面</span><br><span class="line">c.NotebookApp.password = u&apos;&apos;  # notebook密码，生成方式在配置文件中有</span><br><span class="line">c.NotebookApp.port = 1717  # 配置端口，避免跟别人冲突嘛</span><br></pre></td></tr></table></figure>
-<p>万事俱备，<code>jupyter notebook</code>开启notebook<br>等等，说好的本地开发呢？<br>请打开本地浏览器，地址栏输入ip + 端口号，如<code>192.168.0.100：1717</code>，输入密码，log in，大功告成！<br>不想每次都登上服务器开启jupyter？让它保持后台运行吧！<code>nohup jupyter notebook &amp;</code>，<strong>注意</strong>：暂时不用的时候记得<code>shutdown</code>，不然内存、显存会被持续占有。<br><img src="/image/5_shutdown.png" alt="Shutdown"></p>
+<p>万事俱备，<code>jupyter notebook</code>开启notebook<br>等等，说好的本地开发呢？<br>请打开本地浏览器，地址栏输入ip + 端口号，如<code>192.168.0.100：1717</code>，输入密码，log in，大功告成！<br>不想每次都登上服务器开启jupyter？让它保持后台运行吧！</p>
+<ul>
+<li><code>nohup jupyter notebook &amp;</code>，<strong>注意</strong>：暂时不用的时候记得<code>shutdown</code>，不然内存、显存会被持续占有。</li>
+<li><img src="/image/5_shutdown.png" alt="Shutdown"></li>
+</ul>
 <h2 id="Pycharm"><a href="#Pycharm" class="headerlink" title="Pycharm"></a>Pycharm</h2><p><a href="http://blog.csdn.net/ll641058431/article/details/53049453" target="_blank" rel="noopener">使用PyCharm进行远程开发和调试</a><br>上面的博文中已经有了图文并茂的详细说明，这里只做简单摘要总结，方便自己。</p>
 <h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><ul>
 <li>Tools -&gt; Deployment -&gt; Configuration</li>
