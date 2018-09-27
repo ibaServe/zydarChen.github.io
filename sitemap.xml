@@ -2,6 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zydarchen.github.io/20170825/12_auto_yys/</loc>
+    
+    <lastmod>2018-09-27T13:20:19.059Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20171023/13_debug/</loc>
+    
+    <lastmod>2018-09-27T13:16:44.423Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20171221/14_styles_of_truncated_backpropagation/</loc>
+    
+    <lastmod>2018-09-27T13:15:17.814Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20160927/0_spark_build/</loc>
+    
+    <lastmod>2018-09-27T13:14:25.884Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20170816/11_git_note/</loc>
+    
+    <lastmod>2018-09-27T13:12:43.270Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20170707/4_hello_blog/</loc>
+    
+    <lastmod>2018-09-27T13:12:03.376Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20170730/10_ML_foundations_2/</loc>
+    
+    <lastmod>2018-09-27T13:11:07.558Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20170727/9_ML_foundations_1/</loc>
+    
+    <lastmod>2018-09-27T13:08:56.181Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20180402/16_offer_ML/</loc>
+    
+    <lastmod>2018-09-27T13:07:40.736Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20170726/8_GoogleML_note/</loc>
+    
+    <lastmod>2018-09-27T13:06:13.241Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20170714/6_91_python_suggestions/</loc>
+    
+    <lastmod>2018-09-27T13:04:28.478Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20170711/5_remote_on_jupyter_and_pycharm/</loc>
+    
+    <lastmod>2018-09-27T13:02:40.488Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/20180925/21_stateful_LSTM/</loc>
+    
+    <lastmod>2018-09-27T12:25:11.662Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zydarchen.github.io/about/index.html</loc>
     
     <lastmod>2018-09-25T13:45:45.884Z</lastmod>
@@ -9,140 +100,63 @@
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20170707/hello-blog/</loc>
-    
-    <lastmod>2018-09-25T13:41:34.578Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20180925/stateful_LSTM/</loc>
-    
-    <lastmod>2018-09-25T08:08:29.977Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20180116/understanding-Stateful-LSTM/</loc>
+    <loc>https://zydarchen.github.io/20180116/15_understanding_stateful_LSTM/</loc>
     
     <lastmod>2018-09-25T07:59:08.791Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20180412/sublime_using/</loc>
+    <loc>https://zydarchen.github.io/20180412/17_sublime_using/</loc>
     
     <lastmod>2018-09-25T07:58:31.959Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20171221/Styles-of-Truncated-Backpropagation/</loc>
-    
-    <lastmod>2018-09-25T07:58:21.318Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20170717/debug-spark/</loc>
+    <loc>https://zydarchen.github.io/20170717/7_debug_spark/</loc>
     
     <lastmod>2018-09-25T07:57:30.766Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20160927/spark_build/</loc>
-    
-    <lastmod>2018-09-25T07:57:11.223Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20161026/python_tips/</loc>
+    <loc>https://zydarchen.github.io/20161026/2_python_tips/</loc>
     
     <lastmod>2018-09-25T07:56:52.033Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20180402/offer_ML/</loc>
-    
-    <lastmod>2018-09-25T07:55:16.395Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20170727/ML-Foundations-1/</loc>
-    
-    <lastmod>2018-09-25T07:53:34.884Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20170730/ML-Foundations-2/</loc>
-    
-    <lastmod>2018-09-25T07:53:33.800Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20160930/linux-tips/</loc>
+    <loc>https://zydarchen.github.io/20160930/1_linux_tips/</loc>
     
     <lastmod>2018-09-25T07:50:23.873Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20170711/jupyter-and-pycharm-for-remote/</loc>
-    
-    <lastmod>2018-09-25T07:49:41.620Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20170726/GoogleML-note/</loc>
-    
-    <lastmod>2018-09-25T07:45:35.136Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20161029/encode_decode/</loc>
+    <loc>https://zydarchen.github.io/20161029/3_encode_decode/</loc>
     
     <lastmod>2018-09-25T07:44:52.415Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20171023/debug/</loc>
-    
-    <lastmod>2018-09-25T07:43:28.058Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20180727/cs224n-2/</loc>
+    <loc>https://zydarchen.github.io/20180727/20_cs224n_2/</loc>
     
     <lastmod>2018-09-25T07:39:35.967Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20180612/cs224n-1/</loc>
+    <loc>https://zydarchen.github.io/20180612/18_cs224n_1/</loc>
     
     <lastmod>2018-09-25T07:39:20.339Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20170825/auto-yys/</loc>
-    
-    <lastmod>2018-09-25T07:37:59.570Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20180630/quick_sql/</loc>
+    <loc>https://zydarchen.github.io/20180630/19_quick_sql/</loc>
     
     <lastmod>2018-06-30T16:23:50.620Z</lastmod>
     
@@ -156,23 +170,9 @@
   </url>
   
   <url>
-    <loc>https://zydarchen.github.io/20170816/git-note/</loc>
-    
-    <lastmod>2018-05-09T14:54:48.536Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zydarchen.github.io/notdisplay/sublime_using.html</loc>
     
     <lastmod>2018-04-12T13:37:53.909Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20170714/91-Suggestions/</loc>
-    
-    <lastmod>2018-04-12T13:24:38.799Z</lastmod>
     
   </url>
   
