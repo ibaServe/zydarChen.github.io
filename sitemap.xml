@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zydarchen.github.io/20180402/16_offer_ML/</loc>
+    
+    <lastmod>2018-10-10T11:00:14.072Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zydarchen.github.io/20170707/4_hello_blog/</loc>
     
     <lastmod>2018-10-10T04:17:00.123Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>https://zydarchen.github.io/20170727/9_ML_foundations_1/</loc>
     
     <lastmod>2018-09-27T13:08:56.181Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20180402/16_offer_ML/</loc>
-    
-    <lastmod>2018-09-27T13:07:40.736Z</lastmod>
     
   </url>
   
