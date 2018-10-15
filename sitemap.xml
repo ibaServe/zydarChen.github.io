@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zydarchen.github.io/20180412/17_sublime_using/</loc>
+    
+    <lastmod>2018-10-15T07:03:14.889Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zydarchen.github.io/20171023/13_debug/</loc>
     
     <lastmod>2018-10-13T11:17:42.441Z</lastmod>
@@ -103,13 +110,6 @@
     <loc>https://zydarchen.github.io/20180116/15_understanding_stateful_LSTM/</loc>
     
     <lastmod>2018-09-25T07:59:08.791Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20180412/17_sublime_using/</loc>
-    
-    <lastmod>2018-09-25T07:58:31.959Z</lastmod>
     
   </url>
   
