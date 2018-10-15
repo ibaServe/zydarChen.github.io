@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zydarchen.github.io/20180925/21_stateful_LSTM/</loc>
+    
+    <lastmod>2018-10-15T14:21:37.547Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zydarchen.github.io/notdisplay/21_stateful_LSTM.html</loc>
+    
+    <lastmod>2018-10-15T14:20:56.735Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zydarchen.github.io/20180402/16_offer_ML/</loc>
     
     <lastmod>2018-10-15T14:04:45.654Z</lastmod>
@@ -89,13 +103,6 @@
     <loc>https://zydarchen.github.io/20170714/6_91_python_suggestions/</loc>
     
     <lastmod>2018-09-27T13:04:28.478Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zydarchen.github.io/20180925/21_stateful_LSTM/</loc>
-    
-    <lastmod>2018-09-27T12:25:11.662Z</lastmod>
     
   </url>
   

@@ -120,7 +120,7 @@
 
 
 
-  <title>标签: 游戏脚本 | 沐雨浥尘</title>
+  <title>捋一捋Keras LSTM的stateful与stateless | 沐雨浥尘</title>
   
 
 
@@ -176,7 +176,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -299,58 +299,139 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>游戏脚本<small>标签</small>
-        </h1>
-      </div>
+	<h1 class="post-title" itemprop="name headline">捋一捋Keras LSTM的stateful与stateless</h1>
+
+
+
+</header>
 
       
+      
+      
+      <div class="post-body">
         
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
         
-            <a class="post-title-link" href="/20170825/12_auto_yys/" itemprop="url">
-              
-                <span itemprop="name">Python实现自动挂机脚本</span>
-              
-            </a>
-        
-      </h2>
+          <p>最近基本捋清楚了，但是还没空写</p>
+<p>占个坑先</p>
+<a id="more"></a>
+<blockquote>
+<p>参考<br><a href="https://zhuanlan.zhihu.com/p/34495801" target="_blank" rel="noopener">Keras之stateful LSTM全面解析+实例测试</a><br><a href="http://philipperemy.github.io/keras-stateful-lstm/" target="_blank" rel="noopener">Stateful LSTM in Keras</a><br><a href="https://machinelearningmastery.com/stateful-stateless-lstm-time-series-forecasting-python/" target="_blank" rel="noopener">Stateful and Stateless LSTM for Time Series Forecasting with Python</a><br><a href="https://machinelearningmastery.com/understanding-stateful-lstm-recurrent-neural-networks-python-keras/" target="_blank" rel="noopener">Understanding Stateful LSTM Recurrent Neural Networks in Python with Keras</a><br><a href="https://github.com/keras-team/keras/blob/master/examples/lstm_stateful.py" target="_blank" rel="noopener">keras/examples/lstm_stateful.py</a></p>
+</blockquote>
+<h1 id="How-can-I-use-stateful-RNNs"><a href="#How-can-I-use-stateful-RNNs" class="headerlink" title="How can I use stateful RNNs?"></a><a href="https://keras.io/getting-started/faq/#how-can-i-use-stateful-rnns" target="_blank" rel="noopener">How can I use stateful RNNs?</a></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">x  <span class="comment"># this is our input data, of shape (32, 21, 16)</span></span><br><span class="line"><span class="comment"># we will feed it to our model in sequences of length 10</span></span><br><span class="line"></span><br><span class="line">model = Sequential()</span><br><span class="line">model.add(LSTM(<span class="number">32</span>, input_shape=(<span class="number">10</span>, <span class="number">16</span>), batch_size=<span class="number">32</span>, stateful=<span class="keyword">True</span>))</span><br><span class="line">model.add(Dense(<span class="number">16</span>, activation=<span class="string">'softmax'</span>))</span><br><span class="line"></span><br><span class="line">model.compile(optimizer=<span class="string">'rmsprop'</span>, loss=<span class="string">'categorical_crossentropy'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># we train the network to predict the 11th timestep given the first 10:</span></span><br><span class="line">model.train_on_batch(x[:, :<span class="number">10</span>, :], np.reshape(x[:, <span class="number">10</span>, :], (<span class="number">32</span>, <span class="number">16</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># the state of the network has changed. We can feed the follow-up sequences:</span></span><br><span class="line">model.train_on_batch(x[:, <span class="number">10</span>:<span class="number">20</span>, :], np.reshape(x[:, <span class="number">20</span>, :], (<span class="number">32</span>, <span class="number">16</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># let's reset the states of the LSTM layer:</span></span><br><span class="line">model.reset_states()</span><br><span class="line"></span><br><span class="line"><span class="comment"># another way to do it in this case:</span></span><br><span class="line">model.layers[<span class="number">0</span>].reset_states()</span><br></pre></td></tr></table></figure>
+<p>如果两次batch_size不同，报错<code>Input arrays should have the same number of samples as target arrays. Found 30 input samples and 32 target samples.</code></p>
+<h1 id="keras-examples-lstm-stateful-py"><a href="#keras-examples-lstm-stateful-py" class="headerlink" title="keras/examples/lstm_stateful.py"></a>keras/examples/lstm_stateful.py</h1><ul>
+<li>When lahead &lt; tsteps, only the stateful LSTM converges</li>
+<li>When lahead &gt;= tsteps, both the stateful and stateless LSTM converge</li>
+<li>Note that the last state for sample i in a batch will be used as initial state for sample i in the next batch.</li>
+<li>predict的batch_size必须设定</li>
+<li>实验结果<ul>
+<li>tsteps = 2, lahead = 1, batch_size = 1<ul>
+<li>Stateful RMSE: 0.042553</li>
+<li>Stateless RMSE: 0.192812</li>
+<li>y是前两个时刻的数据的平均值，而lahead=1，对于Stateless来说学不到这样的信息</li>
+</ul>
+</li>
+<li>tsteps = 2, lahead = 2, batch_size = 1<ul>
+<li>Stateful RMSE: 0.474242</li>
+<li>Stateless RMSE: 0.000002</li>
+<li>Stateful效果很差，因为序列顺序乱了</li>
+</ul>
+</li>
+<li>tsteps = 2, lahead = 2, batch_size = 2<ul>
+<li>Stateful RMSE: 0.002748</li>
+<li>Stateless RMSE: 0.000000</li>
+<li>Stateful序列顺序正确</li>
+</ul>
+</li>
+<li>tsteps = 2, lahead = 1, batch_size = 2<ul>
+<li>Stateful RMSE: 0.166951</li>
+<li>Stateless RMSE: 0.168921</li>
+</ul>
+</li>
+<li>tsteps = 5, lahead = 3, batch_size = 3<ul>
+<li>Stateful RMSE: 0.033862</li>
+<li>Stateless RMSE: 0.055208</li>
+</ul>
+</li>
+<li>tsteps = 10, lahead = 3, batch_size = 10<ul>
+<li>Stateful RMSE: 0.041099</li>
+<li>Stateless RMSE: 0.039206</li>
+</ul>
+</li>
+<li>tsteps = 10, lahead = 3, batch_size = 9<ul>
+<li>Stateful RMSE: 0.041945</li>
+<li>Stateless RMSE: 0.039375</li>
+</ul>
+</li>
+<li>tsteps = 10, lahead = 3, batch_size = 10， epochs = 50<ul>
+<li>Stateful RMSE: 0.039795</li>
+<li>Stateless RMSE: 0.039449</li>
+</ul>
+</li>
+<li>tsteps = 10, lahead = 3, batch_size = 10， epochs = 500<ul>
+<li>Stateful RMSE: 0.038661</li>
+<li>Stateless RMSE: 0.039704</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Stateful-and-Stateless-LSTM-for-Time-Series-Forecasting-with-Python"><a href="#Stateful-and-Stateless-LSTM-for-Time-Series-Forecasting-with-Python" class="headerlink" title="Stateful and Stateless LSTM for Time Series Forecasting with Python"></a><a href="https://machinelearningmastery.com/stateful-stateless-lstm-time-series-forecasting-python/" target="_blank" rel="noopener">Stateful and Stateless LSTM for Time Series Forecasting with Python</a></h1><h2 id="Experimental-Test-Harness"><a href="#Experimental-Test-Harness" class="headerlink" title="Experimental Test Harness"></a>Experimental Test Harness</h2><ul>
+<li>差分保持平稳</li>
+<li>将序列数据转化成标签数据</li>
+<li>归一化</li>
+<li>1 neuron, 1000 epochs, batch size = 1, optimizater = adam, loss = mse, running time = 10</li>
+<li>验证结果的稳定性： A vs A test<ul>
+<li>先运行10次画出箱形图，再运行10次画出箱形图，比较两个箱形图</li>
+</ul>
+</li>
+</ul>
+<h2 id="Stateful-vs-Stateless-LSTMs"><a href="#Stateful-vs-Stateless-LSTMs" class="headerlink" title="Stateful vs Stateless LSTMs"></a>Stateful vs Stateless LSTMs</h2><ul>
+<li>三个实验，Stateful, Stateless without shuffle, Stateless with shuffle(timestep=1)</li>
+<li>出乎意料的，Stateless优于stateful，shufflle没有明显的差异，同时Stateless更加稳定</li>
+</ul>
+<h2 id="Stateless-with-Large-Batch-vs-Stateless"><a href="#Stateless-with-Large-Batch-vs-Stateless" class="headerlink" title="Stateless with Large Batch vs Stateless"></a>Stateless with Large Batch vs Stateless</h2><ul>
+<li>simulate a Stateful LSTM with a stateless LSTM using a large batch size</li>
+<li>总共数据量也就12个点，测试集12个点，batch_size设置为12，那个每个batch都包含所有数据，Stateless跟Stateful当然相同啊</li>
+</ul>
+<h1 id="Stateful-LSTM-in-Keras"><a href="#Stateful-LSTM-in-Keras" class="headerlink" title="Stateful LSTM in Keras"></a>Stateful LSTM in Keras</h1><p>实验</p>
+<ul>
+<li>X.shape=(1200, 20)</li>
+<li>X_train[0]有一半是1，X_train[0]同时也是Y，模型需要学出来，序列的第一个值是1，输出1，其他输出0</li>
+<li>将原来的序列为20，取子序列10，结果没有帮助，subsampling不能帮助LSTM收敛</li>
+<li>stateful batch_size=1, timestep=1</li>
+</ul>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-25T17:33:18+08:00"
-              content="2017-08-25" >
-          08-25
-        </time>
+        
       </div>
-
-    </header>
-  </article>
-
-
+      
+      
       
     </div>
-
+    
+    
+    
   </div>
-  
-  
-  
-
-  
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTk1Mi82NTE3"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -371,8 +452,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -454,6 +544,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#How-can-I-use-stateful-RNNs"><span class="nav-number">1.</span> <span class="nav-text">How can I use stateful RNNs?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#keras-examples-lstm-stateful-py"><span class="nav-number">2.</span> <span class="nav-text">keras/examples/lstm_stateful.py</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stateful-and-Stateless-LSTM-for-Time-Series-Forecasting-with-Python"><span class="nav-number">3.</span> <span class="nav-text">Stateful and Stateless LSTM for Time Series Forecasting with Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Experimental-Test-Harness"><span class="nav-number">3.1.</span> <span class="nav-text">Experimental Test Harness</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stateful-vs-Stateless-LSTMs"><span class="nav-number">3.2.</span> <span class="nav-text">Stateful vs Stateless LSTMs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stateless-with-Large-Batch-vs-Stateless"><span class="nav-number">3.3.</span> <span class="nav-text">Stateless with Large Batch vs Stateless</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stateful-LSTM-in-Keras"><span class="nav-number">4.</span> <span class="nav-text">Stateful LSTM in Keras</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -607,6 +713,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.1"></script>
+
+
 
   
 
@@ -631,6 +741,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
