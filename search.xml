@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[深入理解Keras LSTM的stateful]]></title>
     <url>%2F20180925%2F21_stateful_LSTM%2F</url>
-    <content type="text"><![CDATA[Keras LSTM的stateful非常容易用错，前段时间研究了一下，记记笔记~如有错误，欢迎评论指出~ 结论先行官方FAQ 最好的学习资料永远是官方文档 使RNN具有状态意味着每批样品的状态将被重新用作下一批样品的初始状态。当使用有状态 RNN 时，假定： 所有的批次都有相同数量的样本 如果x1和x2是连续批次的样本，则x2[i]是x1[i]的后续序列，对于每个i。 有点绕，我给翻译翻译-]]></content>
+    <content type="text"><![CDATA[Keras LSTM的stateful非常容易用错，前段时间研究了一下，记记笔记~如有错误，欢迎评论指出~ 结论先行官方FAQ 最好的学习资料永远是官方文档 使RNN具有状态意味着每批样品的状态将被重新用作下一批样品的初始状态。当使用有状态 RNN 时，假定： 所有的批次都有相同数量的样本 如果x1和x2是连续批次的样本，则x2[i]是x1[i]的后续序列，对于每个i。 有点绕，我给翻译翻译]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
