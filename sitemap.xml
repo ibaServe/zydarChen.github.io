@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zydarchen.github.io/20181016/22_tensorflow_gpu/</loc>
+    
+    <lastmod>2018-10-16T09:22:42.866Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zydarchen.github.io/20180925/21_stateful_LSTM/</loc>
     
     <lastmod>2018-10-15T14:21:37.547Z</lastmod>
