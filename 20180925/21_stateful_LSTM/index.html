@@ -83,7 +83,7 @@
 <meta property="og:site_name" content="沐雨浥尘">
 <meta property="og:description" content="渭城朝雨浥轻尘沐雨浥尘沐浥 那个普普通通、平淡无奇、爱海贼、爱小说、爱艺青的写代码少年">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-25T13:45:45.884Z">
+<meta property="og:updated_time" content="2018-09-25T13:45:45.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我 · 沐浥">
 <meta name="twitter:description" content="渭城朝雨浥轻尘沐雨浥尘沐浥 那个普普通通、平淡无奇、爱海贼、爱小说、爱艺青的写代码少年">
@@ -120,7 +120,7 @@
 
 
 
-  <title>捋一捋Keras LSTM的stateful与stateless | 沐雨浥尘</title>
+  <title>深入理解Keras LSTM的stateful | 沐雨浥尘</title>
   
 
 
@@ -332,7 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">捋一捋Keras LSTM的stateful与stateless</h1>
+          <h1 class="post-title" itemprop="name headline">深入理解Keras LSTM的stateful</h1>
         
 
         <div class="post-meta">
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">32</span>
+                <span title="字数统计">204</span>
               
 
               
@@ -421,10 +421,17 @@
       
 
       
-        <p>占个坑先</p>
+        <p>Keras LSTM的stateful非常容易用错，前段时间研究了一下，记记笔记~<br>如有错误，欢迎评论指出~</p>
 <a id="more"></a>
-<p>最近基本捋清楚了，但是还没空写</p>
-<p>有问题可以评论交流</p>
+<h1 id="结论先行"><a href="#结论先行" class="headerlink" title="结论先行"></a>结论先行</h1><h1 id="官方FAQ"><a href="#官方FAQ" class="headerlink" title="官方FAQ"></a><a href="https://keras.io/zh/getting-started/faq/#how-can-i-use-stateful-rnns" target="_blank" rel="noopener">官方FAQ</a></h1><blockquote>
+<p>最好的学习资料永远是官方文档</p>
+</blockquote>
+<p>使RNN具有状态意味着每批样品的状态将被重新用作下一批样品的初始状态。<br>当使用有状态 RNN 时，假定：</p>
+<ul>
+<li>所有的批次都有相同数量的样本</li>
+<li>如果<code>x1</code>和<code>x2</code>是连续批次的样本，则<code>x2[i]</code>是<code>x1[i]</code>的后续序列，对于每个<code>i</code>。</li>
+</ul>
+<p>有点绕，我给翻译翻译<br><img src="/image/21_stateful.png" alt=""><br>- </p>
 
       
     </div>
@@ -550,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -633,6 +649,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#结论先行"><span class="nav-number">1.</span> <span class="nav-text">结论先行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#官方FAQ"><span class="nav-number">2.</span> <span class="nav-text">官方FAQ</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
