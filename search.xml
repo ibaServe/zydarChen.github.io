@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[关于tensorflow限制GPU]]></title>
+    <title><![CDATA[使用Tensorflow或Keras时对GPU内存限制]]></title>
     <url>%2F20181016%2F22_tensorflow_gpu%2F</url>
-    <content type="text"><![CDATA[一会删除 跑Keras or Tensorflow时默认占满所有GPU内存，这时如果想再开一个进程，或者别人想开一个进程都挤不上来，所以必须限制GPU内存 visible_device_list指定使用哪块显卡 per_process_gpu_memory_fraction分配到的内存占总内存量的比例 allow_growth根据运行时的需要来分配GPU内存，刚开始分配很少内存，随着Session开始运行并需要更多GPU内存时会自动扩展，但后续不会释放内存 per_process_gpu_memory_fraction与allow_growth两种方法二选一即可。一般用allow_growth即可，如果你能准确预估你的程序需要多大显存，推荐per_process_gpu_memory_fraction 123456789# 将下面代码加在.py文件开头即可import tensorflow as tfconfig = tf.ConfigProto()config.gpu_options.visible_device_list = '0'# config.gpu_options.per_process_gpu_memory_fraction = 0.2config.gpu_options.allow_growth = Truesess = tf.Session(graph=tf.get_default_graph(), config=config)# from keras import backend as K# K.set_session(sess) 我的做法，config.py中写好set_gpu()函数，自动识别是否有显卡，有显卡则指定空余内存多的显卡，并设置分配比例 12345678910111213141516171819202122def set_gpu(ratio=0.2): """ 配置GPU，0表示自适应，(0, 1]表示显存占比 :param ratio: :return: """ command = 'nvidia-smi -q -d Memory | grep -A4 GPU | grep Free &gt; tmp' if os.system(command) == 0: memory_gpu = [int(x.split()[2]) for x in open('tmp', 'r').readlines()] num = int(np.argmax(memory_gpu)) print('&gt;&gt;&gt; %d GPU Free Memory: %d MiB' % (num, memory_gpu[num])) os.system('rm tmp') import tensorflow as tf config = tf.ConfigProto() config.gpu_options.visible_device_list = str(num) if ratio == 0: config.gpu_options.allow_growth = True else: config.gpu_options.per_process_gpu_memory_fraction = ratio sess = tf.Session(graph=tf.get_default_graph(), config=config) from keras import backend as K K.set_session(sess) 指定显卡的另外两种方法 配进环境变量 1export CUDA_VISIBLE_DEVICES=0 使用os 12import osos.environ["CUDA_VISIBLE_DEVICES"] = '0' 查看GPU使用情况 watch -n 1 nvidia-smi每秒刷新 nvidia-smi]]></content>
+    <content type="text"><![CDATA[跑Keras 或者 Tensorflow时默认占满所有GPU内存，这时如果想再开一个进程，或者别人想开一个进程都挤不上来，所以必须限制GPU内存 最好的资料还是官方文档 visible_device_list指定使用哪块显卡 per_process_gpu_memory_fraction分配到的内存占总内存量的比例 allow_growth根据运行时的需要来分配GPU内存，刚开始分配很少内存，随着Session开始运行并需要更多GPU内存时会自动扩展，但后续不会释放内存 per_process_gpu_memory_fraction与allow_growth两种方法二选一即可。一般用allow_growth即可，如果你能准确预估你的程序需要多大显存，推荐per_process_gpu_memory_fraction123456789# 将下面代码加在.py文件开头即可import tensorflow as tfconfig = tf.ConfigProto()config.gpu_options.visible_device_list = '0'# config.gpu_options.per_process_gpu_memory_fraction = 0.2config.gpu_options.allow_growth = Truesess = tf.Session(config=config)# from keras import backend as K# K.set_session(sess) 我的做法，每个项目习惯于有个配置文件config.py，里面写好基本配置函数，如GPU配置，路径配置等。set_gpu()函数，自动识别是否有显卡，有显卡则指定空余内存多的显卡，并设置分配比例12345678910111213141516171819202122232425262728293031def set_gpu(ratio=0.8, target='memory'): """ 配置GPU，0表示自适应，(0, 1]表示显存占比 :param ratio: :param target: 选择显存大的卡还是GPU利用率低的卡 :return: """ command1 = "nvidia-smi -q -d Memory | grep -A4 GPU | grep Free | awk '&#123;print $3&#125;'" command2 = "nvidia-smi -q | grep Gpu | awk '&#123;print $3&#125;'" memory = list(map(int, os.popen(command1).readlines())) gpu = list(map(int, os.popen(command2).readlines())) if memory and gpu: # 如果没有显卡，memory，gpu均为[] if target == 'memory': num = (1, 0)[memory[0] &gt; memory[1]] else: num = (0, 1)[gpu[0] &gt; gpu[1]] print('&gt;&gt;&gt; Free Memory : GPU0 %6d MiB | GPU1 %6d MiB' % (memory[0], memory[1])) print('&gt;&gt;&gt; Volatile GPU-Util : GPU0 %6d %% | GPU1 %6d %% ' % (gpu[0], gpu[1])) print('&gt;&gt;&gt; Using GPU%d' % num) import tensorflow as tf config = tf.ConfigProto() config.gpu_options.visible_device_list = str(num) # 选择GPU if ratio == 0: config.gpu_options.allow_growth = True else: config.gpu_options.per_process_gpu_memory_fraction = ratio sess = tf.Session(config=config) from keras import backend as K K.set_session(sess) else: print('&gt;&gt;&gt; Could not find the GPU') 指定显卡的另外两种方法 配进环境变量1export CUDA_VISIBLE_DEVICES=0 使用os12import osos.environ["CUDA_VISIBLE_DEVICES"] = '0' 查看GPU使用情况 watch -n 1 nvidia-smi每秒刷新 nvidia-smi]]></content>
       <categories>
-        <category>杂七杂八</category>
+        <category>工具使用</category>
       </categories>
       <tags>
-        <tag>debug</tag>
+        <tag>Keras</tag>
+        <tag>Tensorflow</tag>
       </tags>
   </entry>
   <entry>
@@ -167,7 +168,6 @@
       </categories>
       <tags>
         <tag>ML</tag>
-        <tag>TF</tag>
       </tags>
   </entry>
   <entry>
