@@ -470,6 +470,9 @@
 <li>如果<code>lahead=1, tsteps=2, lahead &lt; tsteps</code>，预测值仅与当前时刻和上一时刻的输入有关，而我们只拿了当前时刻数据建模，使用stateless肯定不能收敛，而使用stateful，由于能考虑上一时刻的输入，故收敛</li>
 </ul>
 <p>实际效果</p>
+<blockquote>
+<p><a href="http://nbviewer.jupyter.org/github/zydarChen/MLnote/blob/master/LSTM/keras_lstm_stateful/lstm_stateful.ipynb" target="_blank" rel="noopener">代码&amp;结果</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -482,26 +485,26 @@
 <tbody>
 <tr>
 <td>2, 1, 1</td>
-<td>0.042553</td>
-<td>0.192812</td>
+<td>0.014813</td>
+<td>0.031049</td>
 <td>1</td>
 </tr>
 <tr>
 <td>2, 2, 1</td>
-<td>0.474242</td>
-<td>0.000002</td>
+<td>0.011407</td>
+<td>0.000185</td>
 <td>2</td>
 </tr>
 <tr>
 <td>2, 2, 2</td>
-<td>0.002748</td>
-<td>0.000000</td>
+<td>0.010075</td>
+<td>0.000017</td>
 <td>3</td>
 </tr>
 <tr>
 <td>2, 1, 2</td>
-<td>0.166951</td>
-<td>0.168921</td>
+<td>0.028951</td>
+<td>0.029062</td>
 <td>4</td>
 </tr>
 </tbody>
