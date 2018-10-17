@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">204</span>
+                <span title="字数统计">313</span>
               
 
               
@@ -431,9 +431,12 @@
 <li>所有的批次都有相同数量的样本</li>
 <li>如果<code>x1</code>和<code>x2</code>是连续批次的样本，则<code>x2[i]</code>是<code>x1[i]</code>的后续序列，对于每个<code>i</code>。</li>
 </ul>
-<p>有点绕，我给翻译翻译</p>
-<p><img src="/image/21_stateful.png" alt=""></p>
-<p><img src="/image/16_taylor.png" alt=""></p>
+<p>有点绕，我给翻译翻译<br><img src="/image/21_stateful.png" alt=""></p>
+<ul>
+<li>假设<code>Timestep=5， batch_size=2</code></li>
+<li><code>X1</code>和<code>X2</code>就是连续的两个批次，<code>X2[i]</code>是<code>X1[i]</code>的后续序列，也就是说，<code>床前明月光</code>后面是<code>疑是地上霜</code></li>
+<li><code>光</code>的状态会传递到<code>疑</code>作为初始状态，也就是用<code>光</code>输出的<code>(h, c)</code></li>
+</ul>
 
       
     </div>
