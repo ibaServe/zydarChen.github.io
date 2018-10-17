@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">313</span>
+                <span title="字数统计">2k</span>
               
 
               
@@ -423,21 +423,97 @@
       
         <p>Keras LSTM的stateful非常容易用错，前段时间研究了一下，记记笔记~<br>如有错误，欢迎评论指出~</p>
 <a id="more"></a>
-<h1 id="结论先行"><a href="#结论先行" class="headerlink" title="结论先行"></a>结论先行</h1><h1 id="官方FAQ"><a href="#官方FAQ" class="headerlink" title="官方FAQ"></a><a href="https://keras.io/zh/getting-started/faq/#how-can-i-use-stateful-rnns" target="_blank" rel="noopener">官方FAQ</a></h1><blockquote>
+<h2 id="结论先行"><a href="#结论先行" class="headerlink" title="结论先行"></a>结论先行</h2><h2 id="官方FAQ"><a href="#官方FAQ" class="headerlink" title="官方FAQ"></a><a href="https://keras.io/zh/getting-started/faq/#how-can-i-use-stateful-rnns" target="_blank" rel="noopener">官方FAQ</a></h2><blockquote>
 <p>最好的学习资料永远是官方文档</p>
 </blockquote>
 <p>使RNN具有状态意味着每批样品的状态将被重新用作下一批样品的初始状态。<br>当使用有状态 RNN 时，假定：</p>
 <ul>
 <li>所有的批次都有相同数量的样本</li>
-<li>如果<code>x1</code>和<code>x2</code>是连续批次的样本，则<code>x2[i]</code>是<code>x1[i]</code>的后续序列，对于每个<code>i</code>。</li>
+<li>如果<code>x1</code>和<code>x2</code>是连续批次的样本，则<code>x2[i]</code>是<code>x1[i]</code>的后续序列，对于每个<code>i</code></li>
+</ul>
+<p>要在 RNN 中使用状态，你需要:</p>
+<ul>
+<li>通过将<code>batch_size</code>参数传递给模型的第一层来显式指定你正在使用的批大小。例如，对于10个时间步长的32样本的batch，每个时间步长具有16个特征，<code>batch_size = 32</code></li>
+<li>在RNN层中设置<code>stateful = True</code></li>
+<li>在调用<code>fit()</code>时指定<code>shuffle = False</code></li>
 </ul>
 <p>有点绕，我给翻译翻译<br><img src="/image/21_stateful.png" alt=""></p>
 <ul>
 <li>假设<code>Timestep=5， batch_size=2</code></li>
 <li><code>X1</code>和<code>X2</code>就是连续的两个批次，<code>X2[i]</code>是<code>X1[i]</code>的后续序列，也就是说，<code>床前明月光</code>后面是<code>疑是地上霜</code></li>
-<li><code>光</code>的状态会传递到<code>疑</code>作为初始状态，也就是用<code>光</code>输出的<code>(h, c)</code></li>
+<li><code>光</code>的状态会传递到<code>疑</code>作为初始状态，也就是用<code>光</code>输出的<code>(h, c)</code>来初始化<code>疑</code>的<code>(h, c)</code></li>
+<li>那就不难理解为什么“所有的批次都有相同数量的样本”，如果不同批次的样本数不同，那上一批次传过来的<code>(h, c)</code>将没人接手</li>
+<li>进而，Keras文档说用<code>stateful</code>需要<code>指定batch_size</code>也没毛病，不指定的话，Keras默认容忍最后一个批次样本数不同。例如，<code>samples=9,batch_szie=2</code>，那么默认分成5批，最后一批只有1个样本</li>
 </ul>
-
+<p>下一个问题，<code>shuffle</code></p>
+<ul>
+<li><code>shuffle = True</code>会在每个<code>epoch</code>开始之前打乱<strong>训练集</strong>数据顺序，使用stateful LSTM肯定要设置<code>shuffle = False</code>，不然<code>光</code>可能传给<code>汗</code>不就乱套了</li>
+</ul>
+<h2 id="官方examples"><a href="#官方examples" class="headerlink" title="官方examples"></a><a href="https://github.com/keras-team/keras/blob/master/examples/lstm_stateful.py" target="_blank" rel="noopener">官方examples</a></h2><blockquote>
+<p>还是那句话，最好的学习资料在官方，墙裂建议好好跑跑这份代码，以下只是我的笔记~</p>
+</blockquote>
+<p>参数说明</p>
+<ul>
+<li><code>input_len</code>序列长度</li>
+<li><code>tsteps</code>移动平均的步长<br>e.g. if tsteps=2 and input=[1, 2, 3, 4, 5], then output=[1.5, 2.5, 3.5, 4.5]</li>
+<li><code>lahead</code>理解成模型的timestep就行了</li>
+</ul>
+<p>结论</p>
+<ul>
+<li>When lahead &lt; tsteps, only the stateful LSTM converges</li>
+<li>When lahead &gt;= tsteps, both the stateful and stateless LSTM converge</li>
+</ul>
+<p>我再来翻译翻译</p>
+<ul>
+<li>任务的实质就是，用lahead个前序数据去预测步长为tsteps的平均值</li>
+<li>如果<code>lahead=3, tsteps=2, lahead &gt;= tsteps</code>，预测值仅与当前时刻和上一时刻的输入有关，而我们拿三个时刻的数据建模，肯定收敛</li>
+<li>如果<code>lahead=1, tsteps=2, lahead &lt; tsteps</code>，预测值仅与当前时刻和上一时刻的输入有关，而我们只拿了当前时刻数据建模，使用stateless肯定不能收敛，而使用stateful，由于能考虑上一时刻的输入，故收敛</li>
+</ul>
+<p>实际效果</p>
+<table>
+<thead>
+<tr>
+<th>(tsteps, lahead, batch_size)</th>
+<th>Stateful RMSE</th>
+<th>Stateless RMSE</th>
+<th>序号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2, 1, 1</td>
+<td>0.042553</td>
+<td>0.192812</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2, 2, 1</td>
+<td>0.474242</td>
+<td>0.000002</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2, 2, 2</td>
+<td>0.002748</td>
+<td>0.000000</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2, 1, 2</td>
+<td>0.166951</td>
+<td>0.168921</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>tsteps=2，lahead=1，理论上stateful能收敛，stateless不能收敛，RMSE(stateful) &lt; RMSE(stateless)没问题</li>
+<li>tsteps=2，lahead=2，理论上都能收敛，但为什么stateful效果这么差？因为batch_size=1，此时不满足“如果<code>x1</code>和<code>x2</code>是连续批次的样本，则<code>x2[i]</code>是<code>x1[i]</code>的后续序列，对于每个<code>i</code>”</li>
+<li>在<code>2</code>的基础上，batch_size调整为2，stateful收敛，符合预期</li>
+<li>tsteps=2，lahead=1，batch_size=2，二者效果均一般，也符合预期</li>
+</ol>
+<p>在<strong>本例</strong>中，需要保证<code>lahead = batch_size</code>，才能保证stateful正确传递状态，为什么呢？请看图~<br><img src="/image/21_batch_size.png" alt=""><br>明白了吧~</p>
+<h2 id="非官方FAQ"><a href="#非官方FAQ" class="headerlink" title="非官方FAQ"></a>非官方FAQ</h2><h2 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h2>
       
     </div>
     
@@ -664,7 +740,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#结论先行"><span class="nav-number">1.</span> <span class="nav-text">结论先行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#官方FAQ"><span class="nav-number">2.</span> <span class="nav-text">官方FAQ</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#结论先行"><span class="nav-number">1.</span> <span class="nav-text">结论先行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#官方FAQ"><span class="nav-number">2.</span> <span class="nav-text">官方FAQ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#官方examples"><span class="nav-number">3.</span> <span class="nav-text">官方examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非官方FAQ"><span class="nav-number">4.</span> <span class="nav-text">非官方FAQ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#踩过的坑"><span class="nav-number">5.</span> <span class="nav-text">踩过的坑</span></a></li></ol></div>
             
 
           </div>
@@ -696,7 +772,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">109k</span>
+    <span title="站点总字数">110k</span>
   
 
   
