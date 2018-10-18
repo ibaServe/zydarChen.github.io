@@ -96,6 +96,19 @@ $(document).ready(function () {
           NexT.utils.displaySidebar();
       }) : NexT.utils.displaySidebar();
   }
+  // delayHide
+  const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))}
+  var isSidebarDelayHide = CONFIG.sidebar.display === 'delay_hide';
+  if (isSidebarDelayHide && hasTOC) {
+    NexT.utils.displaySidebar();
+    CONFIG.motion.enable ?
+      (NexT.motion.middleWares.sidebar = function () {
+          NexT.utils.displaySidebar();
+      }) : (sleep(1200).then(() => {
+      NexT.utils.displaySidebar()
+    }));
+  }
 });
 
 // 设置折叠快
